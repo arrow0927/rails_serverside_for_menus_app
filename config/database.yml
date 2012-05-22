@@ -23,12 +23,3 @@ production:
   pool: 5
   username: mam
   password: techno8021
-#These are the database adapters for the connection that needs to be established 
-#with the app: bmc_mam in order to copy the listings from there
-bmc_mam_development:
-  adapter: postgresql
-  encoding: unicode
-  database: bmc_mam_development
-  pool: 5
-  username: mam
-  password: techno8021
