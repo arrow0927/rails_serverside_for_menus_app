@@ -1,58 +1,44 @@
 App0521::Application.routes.draw do
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+ 
+  devise_for :users
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+  root :to => "listings#index"
+  
+  resources :listings
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
+  resources :temp_listings
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+=begin
+These are the routes after I ran rake routes
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+new_user_session GET    /users/sign_in(.:format)          devise/sessions#new
+            user_session POST   /users/sign_in(.:format)          devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)         devise/sessions#destroy
+           user_password POST   /users/password(.:format)         devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)     devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)    devise/passwords#edit
+                         PUT    /users/password(.:format)         devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)           devise/registrations#cancel
+       user_registration POST   /users(.:format)                  devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)          devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)             devise/registrations#edit
+                         PUT    /users(.:format)                  devise/registrations#update
+                         DELETE /users(.:format)                  devise/registrations#destroy
+                    root        /                                 listings#index
+                listings GET    /listings(.:format)               listings#index
+                         POST   /listings(.:format)               listings#create
+             new_listing GET    /listings/new(.:format)           listings#new
+            edit_listing GET    /listings/:id/edit(.:format)      listings#edit
+                 listing GET    /listings/:id(.:format)           listings#show
+                         PUT    /listings/:id(.:format)           listings#update
+                         DELETE /listings/:id(.:format)           listings#destroy
+           temp_listings GET    /temp_listings(.:format)          temp_listings#index
+                         POST   /temp_listings(.:format)          temp_listings#create
+        new_temp_listing GET    /temp_listings/new(.:format)      temp_listings#new
+       edit_temp_listing GET    /temp_listings/:id/edit(.:format) temp_listings#edit
+            temp_listing GET    /temp_listings/:id(.:format)      temp_listings#show
+                         PUT    /temp_listings/:id(.:format)      temp_listings#update
+                         DELETE /temp_listings/:id(.:format)      temp_listings#destroy
+=end
+ 
 end

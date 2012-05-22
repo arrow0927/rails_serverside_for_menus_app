@@ -1,0 +1,17 @@
+<%= form_for(@temp_listing) do |f| %>
+  <% if @temp_listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@temp_listing.errors.count, "error") %> prohibited this temp_listing from being saved:</h2>
+
+      <ul>
+      <% @temp_listing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
