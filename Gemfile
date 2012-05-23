@@ -11,6 +11,11 @@ group :development do
   gem 'annotate', :git=>'git://github.com/ctran/annotate_models.git'
 end
 
+group :production do
+  gem 'thin'
+end
+
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
