@@ -5,15 +5,14 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'devise'
-
+gem 'taps'
+gem 'foreman'
+gem 'thin'
 
 group :development do
   gem 'annotate', :git=>'git://github.com/ctran/annotate_models.git'
 end
 
-group :production do
-  gem 'thin'
-end
 
 
 group :assets do

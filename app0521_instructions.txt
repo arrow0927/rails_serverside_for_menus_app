@@ -1,0 +1,64 @@
+These are the steps I followed in creating the final app
+
+================================================================================
+Created new app 
+* rails new app0521 --skip-test-unit -d postgresql
+* config/database.yml
+changed the name to mam and pw to te****** (the usual)
+* added gem annotate
+*initialized git
+================================================================================
+copying data from old app to this one
+*created a scaffold called TempListing 
+*added line to connect to the other app's postgresql db and extract temp_listings from there.
+The number is 6496 listings
+They all have latitude and longitude.
+Then added the columns I want to create to hold the data coming over to the migration file
+Once the db was created, I coipied all listings over from temp_listings to listings.
+
+================================================================================
+Git
+Then I create a git repository, removed the public/index.html file, removed the readme etc.
+================================================================================
+Devise
+added the devise gem to the app,
+checked that it worked
+================================================================================
+added the taps gem for db management on heroku
+
+================================================================================
+Heroku
+created a heroku instance
+pushed my app up
+pushed the db up
+tried to launch the website
+with heroku opn
+got error
+ran heroku restart
+ran heroku open again
+it worked
+================================================================================
+security loophole
+although i removed the signup button,
+users can still access the signup page through the url
+THIS PROBLEM NEEDS TO BE SOLVED YET
+Solved this by adding 
+
+==============================================================================
+Procfile to change production server to Thin
+In order that the production mode runs a thin server rather than webrick I created a procfile and added code to it.
+per this post:
+http://stackoverflow.com/questions/10237200/heroku-rails-procfile
+
+According to the railscast:
+its best to install the foreman gem to check that your procfile is accurate
+
+add gem 'Thin' to your gemfile
+
+run foreman check comand at the command line to check if the profile is valid.
+restart the server and you will see it runs thin instead of webrick
+==============================================================================
+
+
+
+
