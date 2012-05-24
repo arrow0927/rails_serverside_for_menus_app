@@ -1,8 +1,9 @@
+<%if user_signed_in? %>
+<%=link_to "Sign Out",  destroy_user_session_path, :method => :delete %><br/>
 <%= form_for(@listing) do |f| %>
   <% if @listing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
-
       <ul>
       <% @listing.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,8 +11,79 @@
       </ul>
     </div>
   <% end %>
-
+ <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :suite %><br />
+    <%= f.text_field :suite %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :province %><br />
+    <%= f.text_field :province %>
+  </div>
+  <div class="field">
+    <%= f.label :postal_code %><br />
+    <%= f.text_field :postal_code %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :businessType %><br />
+    <%= f.text_field :businessType %>
+  </div>
+  <div class="field">
+    <%= f.label :subType %><br />
+    <%= f.text_field :subType %>
+  </div>
+  <div class="field">
+    <%= f.label :owner %><br />
+    <%= f.text_field :owner %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br />
+    <%= f.text_field :source %>
+  </div>
+  <div class="field">
+    <%= f.label :localArea %><br />
+    <%= f.text_field :localArea %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<%else%>
+				<%=link_to "Sign in", new_user_session_path %><br/>
+					Contact the admin to obtain a login and password
+<%end%>

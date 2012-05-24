@@ -58,6 +58,22 @@ add gem 'Thin' to your gemfile
 run foreman check comand at the command line to check if the profile is valid.
 restart the server and you will see it runs thin instead of webrick
 ==============================================================================
+creating roles in the app for various players
+
+With Devise, we can have a full stack solution for both User and Admin. But that only works if User and Admin does not need to share a lot of responsibilities.
+For instance, if you are working on a blogging system with different roles as “editor”, “author” and “contributor”, but they all share a lot of activities in common, as writing a post, handling such roles with Devise can add a great of complexity to your code, mainly because you will need to use Single Table Inheritance (STI) and/or polymorphic relationships very frequently.
+
+Devise is not good for multiroles
+==============================================================================
+Browser caching and access to log-in only pages when hitting back button 
+So when someone logs in and then logs out and hts the back button, currently after
+logging out the user has access to the information which only a logged in user can caccess
+how to prevent this?
+http://stackoverflow.com/questions/4120289/how-to-clear-browser-cache-after-user-logout-to-prevent-access-to-private-info-v
+
+http://stackoverflow.com/questions/711418/how-to-prevent-browser-page-caching-in-rails
+
+https://www.owasp.org/index.php/Testing_for_Logout_and_Browser_Cache_Management_(OWASP-AT-007)
 
 
 

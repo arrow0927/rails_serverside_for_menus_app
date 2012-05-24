@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   before_filter :authenticate_user! 
   
-  
+=begin  
   def get_all
     @temp_listings = TempListing.order("name ASC")
   end
@@ -32,7 +32,7 @@ class ListingsController < ApplicationController
     end
   end
   
-
+=end
   
  
   # GET /listings
