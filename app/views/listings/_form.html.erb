@@ -79,16 +79,7 @@
     <%= f.label :localArea %><br />
     <%= f.text_field :localArea %>
   </div>
-  <!--<div class="field">
-    <%= f.label :image %><br />
-    <%= f.file_field :image %>
-  </div>-->
-  <dic class="field">
-  	<% fields_for @listing.image do | img | %>
-  		<%= img.file_field :image %>
-  		
-	<% end %>	
-  </div>
+  
   
   
   <div class="actions">
