@@ -75,6 +75,46 @@ http://stackoverflow.com/questions/711418/how-to-prevent-browser-page-caching-in
 
 https://www.owasp.org/index.php/Testing_for_Logout_and_Browser_Cache_Management_(OWASP-AT-007)
 
+Basically the program has to instruct the browser to not cache. This is done by setting the response headers which use certain HTTP codes
 
+================================================================================
+
+paperclip
+changed the _form.html.erb helper method to add "multipart" to facilitate image upload
+installed gems for paperclip and also installed imagemagick on my computer with 
+"brew install imagemagick"
+then ran a command on the termninal whch is an imagemagick command to determine the path to image magick: "which convert" this returns a path
+ then added to the path to config/environments/development.rb file this line
+"Paperclip.options[:command_path] = "/usr/local/bin/"
+then follow the instructions here:
+http://rdoc.info/gems/paperclip
+
+paperclip is working however the images are being stored within the file system
+EDIT: trying to solve the problem:
+Let the listings upload an image and then the image metadata gets stored in its own database while the imaage gets stored on Amazon Webservices
+- create Image model in Heroku to store all the iage metadata
+http://stackoverflow.com/questions/10763151/uploading-image-with-papercliprails-how-to-save-the-image-to-a-different-model
+================================================================================
+save images on db  in Heroku or Amazon S3?
+
+
+================================================================================
+Amazon web services
+created an account,
+created a bucket for this app : bmc-app0521-assets
+entered the information on the account key and secret value in the heroku console
+
+In order to save images on amazon s3, I looked at the instructions here
+https://devcenter.heroku.com/articles/s3#ruby-plugins
+and added this to the listings model
+ has_attached_file :image,
+    :storage => :s3,
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :s3_credentials => {
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+
+================================================================================
 
 

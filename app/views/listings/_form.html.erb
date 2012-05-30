@@ -1,6 +1,6 @@
 <%if user_signed_in? %>
 <%=link_to "Sign Out",  destroy_user_session_path, :method => :delete %><br/>
-<%= form_for(@listing) do |f| %>
+<%= form_for(@listing, :html => {:multipart => true} ) do |f| %>
   <% if @listing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
@@ -79,6 +79,18 @@
     <%= f.label :localArea %><br />
     <%= f.text_field :localArea %>
   </div>
+  <!--<div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>-->
+  <dic class="field">
+  	<% fields_for @listing.image do | img | %>
+  		<%= img.file_field :image %>
+  		
+	<% end %>	
+  </div>
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>
