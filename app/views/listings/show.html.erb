@@ -16,11 +16,7 @@
 <p><b>owner</b><%= @listing.owner %></p>
 <p><b>source</b><%= @listing.source %></p>
 <p><b>localArea</b><%= @listing.localArea %></p>
-<%if @listing.image?%>
-<%= image_tag @listing.image.url %>
-<br/>
-<%= link_to @listing.image.url, @listing.image.url %>
-<%end%>
+
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
