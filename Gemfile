@@ -9,7 +9,8 @@ gem 'taps'
 gem 'foreman'
 gem 'thin'
 gem 'paperclip'
-
+gem 'cancan'
+gem 'rolify'
 gem 'aws-sdk'
 
 group :development do

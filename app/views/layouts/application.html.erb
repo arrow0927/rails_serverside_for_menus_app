@@ -14,6 +14,7 @@
 			<%if user_signed_in? %>
 				Signed In as <b><%=current_user.email%></b>. Not You?
 				<%=link_to "Sign Out",  destroy_user_session_path, :method => :delete %><br/>
+				<%= link_to 'View Admin Dash Board', admin_dash_board_index_path %>
 			<%else%>
 				<%=link_to "Sign in", new_user_session_path %><br/>
 				

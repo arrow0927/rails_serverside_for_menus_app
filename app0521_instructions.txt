@@ -41,9 +41,27 @@ it worked
 security loophole
 although i removed the signup button,
 users can still access the signup page through the url
-THIS PROBLEM NEEDS TO BE SOLVED YET
-Solved this by adding 
+This problem has been resolved in every browser except opera
+added this to the application controller
 
+def set_no_cache
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Cache-Control"] = "no-cache, private, max-stale=0, post-check=0, pre-check=0, no-store, max-age=0, must-revalidate"
+    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+    response.headers["Vary"] = "*"
+  end
+  
+Browser caching and access to log-in only pages when hitting back button 
+So when someone logs in and then logs out and hts the back button, currently after
+logging out the user has access to the information which only a logged in user can caccess
+how to prevent this?
+http://stackoverflow.com/questions/4120289/how-to-clear-browser-cache-after-user-logout-to-prevent-access-to-private-info-v
+
+http://stackoverflow.com/questions/711418/how-to-prevent-browser-page-caching-in-rails
+
+https://www.owasp.org/index.php/Testing_for_Logout_and_Browser_Cache_Management_(OWASP-AT-007)
+
+Basically the program has to instruct the browser to not cache. This is done by setting the response headers which use certain HTTP codes
 ==============================================================================
 Procfile to change production server to Thin
 In order that the production mode runs a thin server rather than webrick I created a procfile and added code to it.
@@ -58,6 +76,7 @@ add gem 'Thin' to your gemfile
 run foreman check comand at the command line to check if the profile is valid.
 restart the server and you will see it runs thin instead of webrick
 ==============================================================================
+Rolify
 creating roles in the app for various players
 
 With Devise, we can have a full stack solution for both User and Admin. But that only works if User and Admin does not need to share a lot of responsibilities.
@@ -65,17 +84,7 @@ For instance, if you are working on a blogging system with different roles as â€
 
 Devise is not good for multiroles
 ==============================================================================
-Browser caching and access to log-in only pages when hitting back button 
-So when someone logs in and then logs out and hts the back button, currently after
-logging out the user has access to the information which only a logged in user can caccess
-how to prevent this?
-http://stackoverflow.com/questions/4120289/how-to-clear-browser-cache-after-user-logout-to-prevent-access-to-private-info-v
 
-http://stackoverflow.com/questions/711418/how-to-prevent-browser-page-caching-in-rails
-
-https://www.owasp.org/index.php/Testing_for_Logout_and_Browser_Cache_Management_(OWASP-AT-007)
-
-Basically the program has to instruct the browser to not cache. This is done by setting the response headers which use certain HTTP codes
 
 ================================================================================
 
@@ -96,6 +105,7 @@ Let the listings upload an image and then the image metadata gets stored in its 
 http://stackoverflow.com/questions/10763151/uploading-image-with-papercliprails-how-to-save-the-image-to-a-different-model
 ================================================================================
 save images on db  in Heroku or Amazon S3?
+Save image attributes in Heroku but the actual images in amazon
 
 
 ================================================================================

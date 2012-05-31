@@ -17,7 +17,15 @@
 #  updated_at             :datetime        not null
 #
 
+#This class is created by the gem. This represents a user in a generic form. 
+#A user can have many roles. These roles are defined and managed by the Roles class
+#The roles class is created by the gem Rolify
 class User < ActiveRecord::Base
+	
+	#Method added by the Rolify gem
+	rolify
+  
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -25,5 +33,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  
+  
+  #Every User must have a name and email to use the system, 
+  #in addition the email MUST be unique
+  validates_presence_of :name, :email
+  validates_uniqueness_of  :email, :case_sensitive => false
 end
