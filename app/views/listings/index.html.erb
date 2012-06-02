@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'listings' %>
+<!--<%= stylesheet_link_tag 'listings' %>-->
 
 
 <h1>Listing listings</h1>
@@ -44,23 +44,23 @@
     <th><%=listing.localArea%></th>
   	
   	<%= form_for :listing, :url => { :controller => "listings", :action => 'update' }, :remote => true do |l|%>
-    <td><%= l.radio_button(:keep, "Keep") %>
+    <td><%= l.radio_button(:keep, "Keep") %></br>
     	<%= label_tag(:keep, "Keep") %>
     </td>
-    <td><%= l.radio_button(:keep, "Delete") %>
+    <td><%= l.radio_button(:keep, "Delete") %></br>
     	<%= label_tag(:keep, "Delete") %>
     </td>
-    <td><%= l.check_box(:checked) %>
+    <td><%= l.check_box(:checked) %></br>
     	<%= label_tag(:checked, "checked") %>
     </td>
-    <td><%= l.check_box(:menu_collected) %>
+    <td><%= l.check_box(:menu_collected) %></br>
     	<%= label_tag(:collected, "collected") %>
     </td>
-    <td><%= l.check_box(:menu_digitized) %>
+    <td><%= l.check_box(:menu_digitized) %></br>
     	<%= label_tag(:digitized, "digitized") %>
     </td>
-    <td><%= l.check_box(:menu_in_database) %>
-    	<%= label_tag(:in_database, "in database") %>
+    <td><%= l.check_box(:menu_in_database) %></br>
+    	<%= label_tag(:database, "database") %>
     </td>
       <% l.submit "update"%>
       <%end%>
