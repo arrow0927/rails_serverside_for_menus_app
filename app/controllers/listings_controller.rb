@@ -94,14 +94,15 @@ class ListingsController < ApplicationController
   # PUT /listings/1.json
   def update
     @listing = Listing.find(params[:id])
-
     respond_to do |format|
       if @listing.update_attributes(params[:listing])
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @listing.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

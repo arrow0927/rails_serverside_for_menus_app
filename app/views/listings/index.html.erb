@@ -43,20 +43,27 @@
     <th><%=listing.source%></th>
     <th><%=listing.localArea%></th>
   	
-  	
-    <td><%= radio_button_tag(:keep, "Keep") %>
-    	<%= label_tag(:keep, "Keep") %></td>
-    <td><%= radio_button_tag(:keep, "Delete") %>
-    	<%= label_tag(:keep, "Delete") %></td>
-    <td><%= check_box_tag(:checked) %>
-    	<%= label_tag(:checked, "listing checked") %></td>
-    <td><%= check_box_tag(:menu_collected) %>
-    	<%= label_tag(:menu_collected, "menu collected") %></td>
-    <td><%= check_box_tag(:menu_digitized) %>
-    	<%= label_tag(:menu_digitized, "menu digitized") %></td>
-    <td><%= check_box_tag(:menu_in_database) %>
-    	<%= label_tag(:menu_in_database, "menu in database") %></td>
-      
+  	<%= form_for :listing, :url => { :controller => "listings", :action => 'update' }, :remote => true do |l|%>
+    <td><%= l.radio_button(:keep, "Keep") %>
+    	<%= label_tag(:keep, "Keep") %>
+    </td>
+    <td><%= l.radio_button(:keep, "Delete") %>
+    	<%= label_tag(:keep, "Delete") %>
+    </td>
+    <td><%= l.check_box(:checked) %>
+    	<%= label_tag(:checked, "checked") %>
+    </td>
+    <td><%= l.check_box(:menu_collected) %>
+    	<%= label_tag(:collected, "collected") %>
+    </td>
+    <td><%= l.check_box(:menu_digitized) %>
+    	<%= label_tag(:digitized, "digitized") %>
+    </td>
+    <td><%= l.check_box(:menu_in_database) %>
+    	<%= label_tag(:in_database, "in database") %>
+    </td>
+      <% l.submit "update"%>
+      <%end%>
   </tr>
 <% end %>
 </table>
