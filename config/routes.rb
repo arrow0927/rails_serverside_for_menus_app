@@ -15,9 +15,7 @@ App0521::Application.routes.draw do
   
   resources :listings
 
-  resources :temp_listings
-
-  #added by Ash
+   #added by Ash
   resources :admin_dash_board, :only => :index
 
 end

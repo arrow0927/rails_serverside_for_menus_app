@@ -40,7 +40,7 @@
     <th><%=listing.source%></th>
     <th><%=listing.localArea%></th>
   	
-  	<%= form_for :listing, :url => { :controller => "listings", :action => 'update' }, :remote => true do |l|%>
+  	<!--<%= form_for :listing, :url => { :controller => "listings", :action => 'update' }, :remote => true do |l|%>-->
     <td><%= l.radio_button(:keep, "Keep") %></br>
     	<%= label_tag(:keep, "Keep") %>
     </td>
@@ -60,7 +60,7 @@
     	<%= label_tag(:database, "database") %>
     </td>
       <% l.submit "update"%>
-      <%end%>
+      <!--<%end%>-->
   </tr>
 <% end %>
 </table>
