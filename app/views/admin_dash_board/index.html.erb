@@ -1,32 +1,21 @@
-<h1>User List</h1>
+<h1>Administrator Dash Board</h1>
+<p>This page will allow you to monitor and control various tasks and run reports<p>
+	
+<p>These are the functions that will be provided:</br>
+	<ul>
+		<li><%=link_to "Listings",  'listings_path' %>Listings Index</li>
+		<li><%=link_to "Menu Items",  '#' %>MenuItems index</li>
+		<li><%=link_to "Images",  '#' %>Images index</li>
+		<li><%=link_to "Users",  '#' %>Users Index</li>
+		
+		<li><%=link_to "Ingredients",  '#' %>Ingredients index</li>
+		<li><%=link_to "tags",  '#' %>Tags index</li>
+		<li><%=link_to "Locations",  '#' %>Location index</li>
+		<li><%=link_to "Events",  '#' %>Events index</li>
+		<li><%=link_to "Address",  '#' %>Address index</li>
+		<li><%=link_to "Contacts",  '#' %>Contacts index</li>
+	</ul>
 
-<table>
-  <tr>
-    <th>User Name</th>
-    <th>User Email</th>
-    <th>User Sign In Count</th>
-    <th>Current Sign In at</th>
-    <th>Last Sign In At</th>
-    <th>Current Sign In IP</th>
-    <th>Last Sign In IP</th>
-    
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= user.email %></td>
-    <td><%= user.sign_in_count %></td>
-    <td><%= user.current_sign_in_at %></td>
-    <td><%= user.last_sign_in_at %></td>
-    <td><%= user.current_sign_in_ip %></td>
-    <td><%= user.last_sign_in_ip %></td>
- 
-   
-
-  </tr>
-<% end %>
-</table>
 
 
 

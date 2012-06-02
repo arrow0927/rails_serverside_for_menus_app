@@ -76,18 +76,27 @@ add gem 'Thin' to your gemfile
 run foreman check comand at the command line to check if the profile is valid.
 restart the server and you will see it runs thin instead of webrick
 ==============================================================================
-Rolify
-creating roles in the app for various players
+CanCan & Rolify
+add gem 'cancan'
+bundle install
+rails g cancan:ability
 
+open models/ability.rb
+ 
 With Devise, we can have a full stack solution for both User and Admin. But that only works if User and Admin does not need to share a lot of responsibilities.
 For instance, if you are working on a blogging system with different roles as “editor”, “author” and “contributor”, but they all share a lot of activities in common, as writing a post, handling such roles with Devise can add a great of complexity to your code, mainly because you will need to use Single Table Inheritance (STI) and/or polymorphic relationships very frequently.
 
-Devise is not good for multiroles
+Devise is not good for multiroles. So I will be using Rolify
+After installing Devise as above proceed to install and set up Rolify
+
+follow instructions as laid out here
+http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html
+
+then to every user in the users table I added a role lie this at the ruby console
+user1 = User.find(1)
+user1.add_role :admin
+
 ==============================================================================
-
-
-================================================================================
-
 paperclip
 changed the _form.html.erb helper method to add "multipart" to facilitate image upload
 installed gems for paperclip and also installed imagemagick on my computer with 

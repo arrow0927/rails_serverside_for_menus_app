@@ -1,9 +1,12 @@
+<%= stylesheet_link_tag 'listings' %>
+
+
 <h1>Listing listings</h1>
 
-<table>
-  <tr>
-    <th>id</th>
-    <th>name</th>
+<table class="datatable">
+  <tr id="heading" >
+    <th >id</th>
+    <th >name</th>
     <th>telephone</th>
     <th>fax</th>
     <th>suite</th>
@@ -21,10 +24,10 @@
   </tr>
 
 <% @listings.each do |listing| %>
-  <tr>
+  <tr id="body">
   	
   	<th><%=listing.id%></th>
-    <th><%=listing.name%></th>
+    <th><%= link_to listing.name, edit_listing_path(listing) %></th>
     <th><%=listing.telephone%></th>
     <th><%=listing.fax%></th>
     <th><%=listing.suite%></th>
@@ -40,9 +43,20 @@
     <th><%=listing.source%></th>
     <th><%=listing.localArea%></th>
   	
-    <td><%= link_to 'Show', listing %></td>
-    <td><%= link_to 'Edit', edit_listing_path(listing) %></td>   
-    <!--<td><%= link_to 'Destroy', listing, confirm: 'Are you sure?', method: :delete %></td>-->
+  	
+    <td><%= radio_button_tag(:keep, "Keep") %>
+    	<%= label_tag(:keep, "Keep") %></td>
+    <td><%= radio_button_tag(:keep, "Delete") %>
+    	<%= label_tag(:keep, "Delete") %></td>
+    <td><%= check_box_tag(:checked) %>
+    	<%= label_tag(:checked, "listing checked") %></td>
+    <td><%= check_box_tag(:menu_collected) %>
+    	<%= label_tag(:menu_collected, "menu collected") %></td>
+    <td><%= check_box_tag(:menu_digitized) %>
+    	<%= label_tag(:menu_digitized, "menu digitized") %></td>
+    <td><%= check_box_tag(:menu_in_database) %>
+    	<%= label_tag(:menu_in_database, "menu in database") %></td>
+      
   </tr>
 <% end %>
 </table>
