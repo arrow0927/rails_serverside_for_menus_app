@@ -135,5 +135,8 @@ and added this to the listings model
     }
 
 ================================================================================
-
+error causing line from index.html.erb for listings
+<!--<%= form_for :listing, :url => { :controller => "listings", :action => 'update' }, :remote => true do |l|%>-->
+ <% l.submit "update"%>
+      <!--<%end%>-->
 
