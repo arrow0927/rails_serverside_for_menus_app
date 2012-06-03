@@ -1,22 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p><b>id</b> <%= @listing.id %></p>
-<p><b>name</b><%= @listing.name %></p>
-<p><b>telephone</b><%= @listing.telephone %></p>
-<p><b>fax</b><%= @listing.fax %></p>
-<p><b>suite</b><%= @listing.suite %></p>
-<p><b>address</b><%= @listing.address %></p>
-<p><b>city</b><%= @listing.city %></p>
-<p><b>province</b><%= @listing.province %></p>
-<p><b>postal_code</b><%= @listing.postal_code %></p>
-<p><b>latitude</b><%= @listing.latitude %></p>
-<p><b>longitude</b><%= @listing.longitude %></p>
-<p><b>businessType</b><%= @listing.businessType %></p>
-<p><b>subType</b><%= @listing.subType %></p>
-<p><b>owner</b><%= @listing.owner %></p>
-<p><b>source</b><%= @listing.source %></p>
-<p><b>localArea</b><%= @listing.localArea %></p>
-
+<p><b>id</b>&nbsp <%= @listing.id %></p>
+<p><b>name</b>&nbsp<%= @listing.name %></p>
+<p><b>telephone</b>&nbsp<%= @listing.telephone %></p>
+<p><b>fax</b>&nbsp<%= @listing.fax %></p>
+<p><b>suite</b>&nbsp<%= @listing.suite %></p>
+<p><b>address</b>&nbsp<%= @listing.address %></p>
+<p><b>city</b>&nbsp<%= @listing.city %></p>
+<p><b>province</b>&nbsp<%= @listing.province %></p>
+<p><b>postal_code</b>&nbsp<%= @listing.postal_code %></p>
+<p><b>latitude</b>&nbsp<%= @listing.latitude %></p>
+<p><b>longitude</b>&nbsp<%= @listing.longitude %></p>
+<p><b>businessType</b>&nbsp<%= @listing.businessType %></p>
+<p><b>subType</b>&nbsp<%= @listing.subType %></p>
+<p><b>owner</b>&nbsp<%= @listing.owner %></p>
+<p><b>source</b>&nbsp<%= @listing.source %></p>
+<p><b>localArea</b>&nbsp<%= @listing.localArea %></p>
+<p><b>Keep listing?</b>&nbsp<%= @listing.keep %></p>
+<p><b>Listing info Checked?</b>&nbsp<%= @listing.checked %></p>
+<p><b>Menu Collected?</b>&nbsp<%= @listing.menu_collected %></p>
+<p><b>Menu Digitized?</b>&nbsp<%= @listing.menu_digitized %></p>
+<p><b>Menu in Database?</b>&nbsp<%= @listing.menu_in_database %></p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
