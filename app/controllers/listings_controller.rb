@@ -39,11 +39,12 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     #self.create_listings_from_temp_listings
-    #@listings = Listing.all
-    @listings = Listing.order("name ASC")
+    
+    @listings = Listing.all
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @listings }
+      #format.json { render json: @listings }
+      #format.json { render json: ListingsDatatable.new(view_context) } for Datatable
     end
   end
 

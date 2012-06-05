@@ -1,7 +1,8 @@
 <h1>Listings</h1>
 
-<table class="datatable">
-  <tr id="heading" >
+<table id="listings" class="display" <!--data-source="<%= listings_url(format: "json")%>"-->   >
+	<thead>
+  <tr>
     <th >id</th>
     <th >name</th>
     <th>telephone</th>
@@ -17,11 +18,18 @@
     <th>Business Sub Type</th>
     <th>Owner</th>
     <th>Source</th>
-    <th>neighbourhood</th>
+    <th>Local Area</th>
+    <th>Keep?</th>
+    <th>Checked</th>
+    <th>Menu Collected?</th>
+    <th>Menu Digitized?</th>
+    <th>Menu in DB?</th>
   </tr>
-
+	</thead>
+	
+	<tbody>
 <% @listings.each do |listing| %>
-  <tr id="body">
+  	<tr>
   	
   	<td><%=listing.id%></td>
     <td><%= link_to listing.name, edit_listing_path(listing) %></td>
@@ -39,29 +47,14 @@
     <td><%=listing.owner%></td>
     <td><%=listing.source%></td>
     <td><%=listing.localArea%></td>
-  	
-  	<% @postListing = listing %>
- <%= form_for listing do |f| %> 	
-    <td class="set_state" id="keep"><%= f.check_box :keep %>
-    <%= f.label :keep, "Keep Listing" %>
-    </td>
-    <td class="set_state" id="checked"><%= f.check_box :checked %></br>
-    	<%= f.label :checked, "Listing checked" %>
-    </td>
-    <td class="set_state" id="menu_collected"><%= f.check_box :menu_collected %></br>
-    	<%= f.label :collected, "Menu collected" %>
-    </td>
-    <td class="set_state" id="menu_digitized"><%= f.check_box :menu_digitized %></br>
-    	<%= f.label :digitized, "Menu digitized" %>
-    </td>
-    <td class="set_state" id="menu_in_db"><%= f.check_box :menu_in_database  %></br>
-    	<%= f.label :database, "menu database" %>
-    </td>
-    	 <td class="set_state" id="listing_state_submit"><%= f.submit "update" %></br>
-    </td>
-     <% end %>
-  </tr>
-<% end %>
+    <td><%=listing.keep%></td>
+  	<td><%=listing.checked %></td>
+  	<td><%=listing.menu_collected %></td>
+  	<td><%=listing.menu_digitized %></td>
+  	<td><%=listing.menu_in_database %></td>
+  	</tr>
+	<% end %>
+	</tbody>
 </table>
 
 <br />
