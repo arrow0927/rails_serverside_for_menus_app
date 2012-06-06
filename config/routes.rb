@@ -4,7 +4,8 @@ App0521::Application.routes.draw do
 
   devise_for :users
 
-  #Commented out by Ash as we donot have a Users controller Devise has an impleicit User controller
+  #Commented out by Ash as we donot have a Users controller 
+  #Devise has an implicit User controller
   #resources :users, :only => [:show, :index]
   
   authenticated :user do

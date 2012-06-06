@@ -149,7 +149,12 @@ So I can only have read only values of the booleans in the data table
 For now this problem can be solved when the user clicks on the individual listing and checks or unchecks the columns there.
 
 Converting the table from load all at once to load on demand using JSON:
+After removing the checkboxes I also noticed that the edit_url was not working in the index page within the tables. It seems that all the post variables are not active in datatables, they instead get converted into a get request. Ive posted this on Stackoverflow and datatables.net and Im awaiting a resposne.
 
+================================================================================
+Geocoder Gem
+install gem 
+gem 'geocoder'
 
 
 
@@ -232,5 +237,13 @@ table td
     	<td class="set_state"id="listing_state_submit"><%= f.submit "update" %></br>
     	</td>
      	<% end %>
+
+
+<!--<td><%=listing.keep%></td>
+  	<td><%=listing.checked %></td>
+  	<td><%=listing.menu_collected %></td>
+  	<td><%=listing.menu_digitized %></td>
+  	<td><%=listing.menu_in_database %></td>-->
+  	
   		
 	
