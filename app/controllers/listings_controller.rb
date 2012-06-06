@@ -44,7 +44,7 @@ class ListingsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       #format.json { render json: @listings }
-      #format.json { render json: ListingsDatatable.new(view_context) } for Datatable
+      format.json { render json: ListingsDatatable.new(view_context) } 
     end
   end
 

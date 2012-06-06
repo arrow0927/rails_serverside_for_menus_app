@@ -1,4 +1,4 @@
-class ProductsDatatable
+class ListingsDatatable
   delegate :params, :h, :link_to, :number_to_currency, to: :@view
 
   def initialize(view)
@@ -19,26 +19,27 @@ private
   def data
     listings.map do |listing|
       [
+        h(listing.id),
         link_to(listing.name, listing),
-        listing.telephone,
-        listing.fax,
-        listing.suite,
-        listing.address,
-        listing.city,
-        listing.province,
-        listing.postal_code,
-        listing.latitude,
-        listing.longitude,
-        listing.businessType,
-        listing.subType,
-        listing.owner,
-        listing.source,
-        listing.localArea,
-        listing.keep,
-        listing.checked,
-        listing.menu_collected,
-        listing.menu_digitized,
-        listing.menu_in_database
+        h(listing.telephone),
+        h(listing.fax),
+        h(listing.suite),
+        h(listing.address),
+        h(listing.city),
+        h(listing.province),
+        h(listing.postal_code),
+        h(listing.latitude),
+        h(listing.longitude),
+        h(listing.businessType),
+        h(listing.subType),
+        h(listing.owner),
+        h(listing.source),
+        h(listing.localArea),
+        h(listing.keep),
+        h(listing.checked),
+        h(listing.menu_collected),
+        h(listing.menu_digitized),
+        h(listing.menu_in_database)
       ]
     end
   end
