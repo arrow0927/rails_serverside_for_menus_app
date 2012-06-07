@@ -29,36 +29,7 @@
 	</thead>
 	
 	<tbody>
-<% @listings.each do |listing| %>
-  	<tr >
-  	
-  	<td><%=listing.id%></td>
-    <td><%=link_to listing.name, edit_listing_path(listing) %></td>
-    <td><%=listing.telephone%></td>
-    <td><%=listing.fax%></td>
-    <td><%=listing.suite%></td>
-    <td><%=listing.address%></td>
-    <td><%=listing.city%></td>
-    <td><%=listing.province%></td>
-    <td><%=listing.postal_code%></td>
-    <td><%=listing.latitude%></td>
-    <td><%=listing.longitude%></td>
-    <td><%=listing.businessType%></td>
-    <td><%=listing.subType%></td>
-    <td><%=listing.owner%></td>
-    <td><%=listing.source%></td>
-    <td><%=listing.localArea%></td>
-     
-    
-	<td class = "input_vars" id= "keep"><%= check_box_tag(:keep) %><%= label_tag(:keep, "keep") %></td>
-	<td class = "input_vars" id= "checked"><%= check_box_tag(:checked) %><%= label_tag(:checked, "checked") %></td>
-	<td class = "input_vars" id= "collected"><%= check_box_tag(:menu_collected) %><%= label_tag(:menu_collected, "collected") %></td>
-	<td class = "input_vars" id= "digitized"><%= check_box_tag(:menu_digitized) %><%= label_tag(:menu_digitized, "digitized") %></td>
-	<td class = "input_vars" id= "in_database"><%= check_box_tag(:menu_in_database) %> <%= label_tag(:menu_in_database, "in database") %></td>
-    
-    
-  	</tr>
-	<% end %>
+
 	</tbody>
 </table>
 
