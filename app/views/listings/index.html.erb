@@ -30,7 +30,7 @@
 	
 	<tbody>
 <% @listings.each do |listing| %>
-  	<tr>
+  	<tr >
   	
   	<td><%=listing.id%></td>
     <td><%=link_to listing.name, edit_listing_path(listing) %></td>
