@@ -42,7 +42,7 @@ $(document).ready(function()
     "bServerSide": true,
     "sAjaxSource": $('#listings').data('source')
   });
-  
+  /*
   $('td', oTable.fnGetNodes()).hover(function() 
   	{
 		var iCol = $('td').index(this) % 5;
@@ -53,6 +53,8 @@ $(document).ready(function()
 	{
 		$('td.highlighted', oTable.fnGetNodes()).removeClass('highlighted');
 	} );
+	*/
+	
    
 });
 
@@ -63,7 +65,7 @@ $('#listings').dataTable(
 	{
 		"fnDrawCallback": function()
 			{
-      			$('table#listings td').bind('mouseenter', function ()
+      			$('#listings td').bind('mouseenter', function ()
       				{ 
       					$(this).parent().children().each(function()
       					{
@@ -71,7 +73,7 @@ $('#listings').dataTable(
       					});
       				});
       
-      			$('table#listings td').bind('mouseleave', function ()
+      			$('#listings td').bind('mouseleave', function ()
       				{ 
       					$(this).parent().children().each(function()
       					{ 

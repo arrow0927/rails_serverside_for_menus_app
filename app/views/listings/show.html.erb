@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
+<p>=============================================================================</p>
 
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
+<p>=============================================================================</p>
 <p><b>id</b>&nbsp <%= @listing.id %></p>
 <p><b>name</b>&nbsp<%= @listing.name %></p>
 <p><b>telephone</b>&nbsp<%= @listing.telephone %></p>
@@ -22,5 +26,3 @@
 <p><b>Menu Digitized?</b>&nbsp<%= @listing.menu_digitized %></p>
 <p><b>Menu in Database?</b>&nbsp<%= @listing.menu_in_database %></p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>

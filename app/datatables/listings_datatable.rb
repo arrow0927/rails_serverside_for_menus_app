@@ -35,6 +35,12 @@ private
         h(listing.owner),
         h(listing.source),
         h(listing.localArea),
+        #check_box_tag(:checked),
+        #check_box_tag('checked?', listing.checked),
+        #check_box_tag('collected', listing.menu_collected),
+        #check_box_tag('digitized', listing.menu_digitized),
+        #check_box_tag('in db?', listing.menu_in_database)
+        
         h(listing.keep),
         h(listing.checked),
         h(listing.menu_collected),

@@ -12,10 +12,8 @@
 	<div id="container">
 		<div id= "user nav">
 			<%if user_signed_in? %>
-				Signed In as <b><%=current_user.email%></b>. <br/>Not You?
-				<%=link_to "Sign Out",  destroy_user_session_path, :method => :delete %><br/>
-				</br>
-				<%= link_to 'View Admin Dash Board', admin_dash_board_index_path %>
+				Signed In as <b><%=current_user.email%></b>. Not You?<%=link_to "Sign Out",  destroy_user_session_path, :method => :delete %><br/>
+				<h3><%= link_to 'View Admin Dash Board', admin_dash_board_index_path %></h3>
 			<%else%>
 				<%=link_to "Sign in", new_user_session_path %><br/>
 				
