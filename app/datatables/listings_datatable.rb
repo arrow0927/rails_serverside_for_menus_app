@@ -58,7 +58,8 @@ private
     listings = Listing.order("#{sort_column} #{sort_direction}")
     listings = listings.page(page).per_page(per_page)
     if params[:sSearch].present?
-      listings = listings.where("name like :search or telephone like :search or address like :search", search: "%#{params[:sSearch]}%")
+      listings = listings.where("name like :search or 
+        telephone like :search or address like :search", search: "%#{params[:sSearch]}%")
     end
     listings
   end

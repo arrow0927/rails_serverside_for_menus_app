@@ -42,18 +42,8 @@ $(document).ready(function()
     "bServerSide": true,
     "sAjaxSource": $('#listings').data('source')
   });
-  /*
-  $('td', oTable.fnGetNodes()).hover(function() 
-  	{
-		var iCol = $('td').index(this) % 5;
-		var nTrs = oTable.fnGetNodes();
-		$('td:nth-child('+(iCol+1)+')', nTrs).addClass( 'highlighted' );
-	}, 
-	function() 
-	{
-		$('td.highlighted', oTable.fnGetNodes()).removeClass('highlighted');
-	} );
-	*/
+  
+ 
 	
    
 });
