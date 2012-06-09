@@ -25,7 +25,7 @@ private
         h(listing.menu_in_database),
         h(listing.keep),
         h(listing.get_menu_from_website),
-        h(listing.url),
+        h(listing.notes),
         h(listing.id),
         link_to(listing.name, listing),
         h(listing.telephone),
@@ -68,7 +68,7 @@ private
   end
 
   def sort_column
-    columns = %w[checked menu_collected menu_digitized menu_in_database keep get_menu_from_website url id name 
+    columns = %w[checked menu_collected menu_digitized menu_in_database keep get_menu_from_website notes id name 
       telephone fax suite address city province postal_code latitude longitude business_type sub_type owner local_area ]
     columns[params[:iSortCol_0].to_i]
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120609192346) do
+ActiveRecord::Schema.define(:version => 20120609210434) do
 
   create_table "addresses", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20120609192346) do
     t.boolean  "menu_in_database"
     t.boolean  "keep",                  :default => true
     t.boolean  "get_menu_from_website", :default => true
-    t.text     "url"
+    t.text     "notes"
   end
 
   create_table "roles", :force => true do |t|
