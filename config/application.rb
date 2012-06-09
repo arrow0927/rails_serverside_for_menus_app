@@ -63,5 +63,6 @@ module App0521
     config.assets.version = '1.0'
     #Added by Ash for devise
     config.assets.initialize_on_precompile = false
+    
   end
 end
