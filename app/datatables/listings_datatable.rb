@@ -19,6 +19,13 @@ private
   def data
     listings.map do |listing|
       [
+        h(listing.checked),
+        h(listing.menu_collected),
+        h(listing.menu_digitized),
+        h(listing.menu_in_database),
+        h(listing.keep),
+        h(listing.get_menu_from_website),
+        h(listing.url),
         h(listing.id),
         link_to(listing.name, listing),
         h(listing.telephone),
@@ -30,21 +37,10 @@ private
         h(listing.postal_code),
         h(listing.latitude),
         h(listing.longitude),
-        h(listing.businessType),
-        h(listing.subType),
+        h(listing.business_type),
+        h(listing.sub_type),
         h(listing.owner),
-        h(listing.source),
-        h(listing.localArea),
-        
-        #check_box_tag('collected', listing.menu_collected),
-        #check_box_tag('digitized', listing.menu_digitized),
-        #check_box_tag('in db?', listing.menu_in_database)
-        
-        h(listing.keep),
-        h(listing.checked),
-        h(listing.menu_collected),
-        h(listing.menu_digitized),
-        h(listing.menu_in_database)
+        h(listing.local_area)
       ]
     end
   end
@@ -72,8 +68,8 @@ private
   end
 
   def sort_column
-    columns = %w[name telephone fax suite address city province postal_code latitude longitude businessType
-      subType owner source localArea checked menu_collected menu_digitized menu_in_database keep]
+    columns = %w[checked menu_collected menu_digitized menu_in_database keep get_menu_from_website url id name 
+      telephone fax suite address city province postal_code latitude longitude business_type sub_type owner local_area ]
     columns[params[:iSortCol_0].to_i]
   end
 

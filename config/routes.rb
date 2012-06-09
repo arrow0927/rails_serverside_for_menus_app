@@ -1,5 +1,7 @@
 App0521::Application.routes.draw do
  
+  resources :addresses
+
   resources :images
 
   devise_for :users

@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602023912) do
+ActiveRecord::Schema.define(:version => 20120609145350) do
+
+  create_table "addresses", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "images", :force => true do |t|
     t.string   "image_description"
@@ -24,28 +29,30 @@ ActiveRecord::Schema.define(:version => 20120602023912) do
   end
 
   create_table "listings", :force => true do |t|
-    t.string   "name",             :default => "Not Available"
-    t.string   "telephone",        :default => "Not Available"
-    t.string   "fax",              :default => "Not Available"
-    t.string   "suite",            :default => "Not Available"
-    t.string   "address",          :default => "Not Available"
-    t.string   "city",             :default => "Not Available"
-    t.string   "province",         :default => "Not Available"
-    t.string   "postal_code",      :default => "Not Available"
-    t.string   "latitude",         :default => "Not Available"
-    t.string   "longitude",        :default => "Not Available"
-    t.string   "businessType",     :default => "Not Available"
-    t.string   "subType",          :default => "Not Available"
-    t.string   "owner",            :default => "Not Available"
-    t.string   "source",           :default => "Not Available"
-    t.string   "localArea",        :default => "Not Available"
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
+    t.string   "name",                  :default => "Not Available"
+    t.string   "telephone",             :default => "Not Available"
+    t.string   "fax",                   :default => "Not Available"
+    t.string   "suite",                 :default => "Not Available"
+    t.string   "address",               :default => "Not Available"
+    t.string   "city",                  :default => "Not Available"
+    t.string   "province",              :default => "Not Available"
+    t.string   "postal_code",           :default => "Not Available"
+    t.string   "latitude",              :default => "Not Available"
+    t.string   "longitude",             :default => "Not Available"
+    t.string   "business_type",         :default => "Not Available"
+    t.string   "sub_type",              :default => "Not Available"
+    t.string   "owner",                 :default => "Not Available"
+    t.string   "source",                :default => "Not Available"
+    t.string   "local_area",            :default => "Not Available"
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
     t.boolean  "checked"
     t.boolean  "menu_collected"
     t.boolean  "menu_digitized"
     t.boolean  "menu_in_database"
-    t.boolean  "keep",             :default => true
+    t.boolean  "keep",                  :default => true
+    t.string   "url"
+    t.boolean  "get_menu_from_website", :default => true
   end
 
   create_table "roles", :force => true do |t|
@@ -58,26 +65,6 @@ ActiveRecord::Schema.define(:version => 20120602023912) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
-
-  create_table "temp_listings", :force => true do |t|
-    t.string   "name",         :default => "Not Available"
-    t.string   "telephone",    :default => "Not Available"
-    t.string   "fax",          :default => "Not Available"
-    t.string   "suite",        :default => "Not Available"
-    t.string   "address",      :default => "Not Available"
-    t.string   "city",         :default => "Not Available"
-    t.string   "province",     :default => "Not Available"
-    t.string   "postal_code",  :default => "Not Available"
-    t.string   "latitude",     :default => "Not Available"
-    t.string   "longitude",    :default => "Not Available"
-    t.string   "businessType", :default => "Not Available"
-    t.string   "subType",      :default => "Not Available"
-    t.string   "owner",        :default => "Not Available"
-    t.string   "source",       :default => "Not Available"
-    t.string   "localArea",    :default => "Not Available"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
-  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
