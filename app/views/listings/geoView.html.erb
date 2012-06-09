@@ -2,10 +2,8 @@
 <script type="text/javascript"
 src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAcCH7ntWPihR8rdCsblUiSRSNptYsO6IA&sensor=false"></script>
 
+<%= stylesheet_link_tag 'application' %><%= javascript_include_tag 'application'%>
 
-<%= stylesheet_link_tag 'application' %>
-<%= javascript_include_tag 'application'%>
-<!--<%= stylesheet_link_tag 'listings' %>-->
 <body onload="initialize()">
 	<h4><%= link_to 'Back to listings table', listings_path %></h4>
 	<div id="control_panel">

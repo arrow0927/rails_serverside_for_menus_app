@@ -191,10 +191,32 @@ Geocoder Gem
 install gem 
 gem 'geocoder'
 
+========================================================================
+Google Maps 
+created a new function in listings_controller.rb called geoView
+Changed the routes file to accomodate this route.
+Created "geoView.html.erb"
+Then copied contents of railsWS/cmdLine/Business/listings/list.html.erb to this view
 
+Also copied the Map.js.erb file from there and into listings.js.erb
+Added the CSS from there to listings.css.scss
 
-
-
+A few adjustments had to be made to make this work in development. Added to application.html.erb
+html {
+	height: 100%
+}
+body {
+	height: 100%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+without these lines the google maps did not show up.
+wrapped the google mpas addDomlistener like  this to listings.js.erb:
+$(window).load(function()
+{
+	google.maps.event.addDomListener(window, 'load', initialize);	
+}
 
 
 
