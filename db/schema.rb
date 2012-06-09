@@ -11,11 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120609145350) do
+ActiveRecord::Schema.define(:version => 20120609192346) do
 
   create_table "addresses", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "business_name"
+    t.string   "address"
+    t.string   "telephone_1"
+    t.string   "url"
+    t.string   "fax"
+    t.string   "telephone_2"
   end
 
   create_table "images", :force => true do |t|
@@ -51,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20120609145350) do
     t.boolean  "menu_digitized"
     t.boolean  "menu_in_database"
     t.boolean  "keep",                  :default => true
-    t.string   "url"
     t.boolean  "get_menu_from_website", :default => true
+    t.text     "url"
   end
 
   create_table "roles", :force => true do |t|
