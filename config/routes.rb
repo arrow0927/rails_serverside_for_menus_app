@@ -16,6 +16,8 @@ App0521::Application.routes.draw do
   
   resources :listings
 
+  match "/geoView" => "listings#geoView", :as => :geoView
+  
    #added by Ash
   resources :admin_dash_board, :only => :index
 

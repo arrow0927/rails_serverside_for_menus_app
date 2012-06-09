@@ -34,6 +34,19 @@ class ListingsController < ApplicationController
   
 =end
   
+  def geoView
+     @listings = Listing.all
+    
+    #render :text=>(@listings).to_json()
+    #render :json =>@listings
+    respond_to do |format|
+         format.html #list.html.erb
+         format.json {render :json =>@listings}
+       end
+  end
+  
+  
+  
  
   # GET /listings
   # GET /listings.json

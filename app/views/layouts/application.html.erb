@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>App0521</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-</head>
-<body>
-	<div id="container">
-		<div id= "user nav">
-			<%if user_signed_in? %>
-				Signed In as <b><%=current_user.email%></b>. Not You?<%=link_to "Sign Out",  destroy_user_session_path, :method => :delete %><br/>
+	<head>
+		<title>App0521</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+		<p class="notice">
+			<%= notice %>
+		</p>
+		<p class="alert">
+			<%= alert %>
+		</p>
+	</head>
+	<body>
+		<div id="container">
+			<div id= "user nav">
+				<%if user_signed_in? %>
+				Signed In as <b><%= current_user.email%></b>. Not You?<%= link_to "Sign Out",  destroy_user_session_path, :method => :delete %>
+				<br/>
 				<h3><%= link_to 'View Admin Dash Board', admin_dash_board_index_path %></h3>
-			<%else%>
-				<%=link_to "Sign in", new_user_session_path %><br/>
-				
+				<%else%>
+				<%= link_to "Sign in", new_user_session_path %>
+				<br/>
 				Contact the admin to obtain a login and password
-			<%end%>
-		</div>		
-	</div>
-
-<%= yield %>
-
-</body>
+				<%end%>
+			</div>
+		</div>
+		<%= yield %>
+	</body>
 </html>

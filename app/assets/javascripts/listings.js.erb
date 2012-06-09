@@ -1,0 +1,234 @@
+//#JQuery
+
+
+//Initialize the datatable
+$(document).ready(function()
+{
+  var oTable = $('#listings').dataTable(
+  {
+    "sPaginationType":  "full_numbers",
+    "bJQueryUI": true,
+    "bSortClasses": false,
+    "sScrollX": "90%",
+    "bScrollCollapse": true,
+    "sDom":  '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
+    "bProcessing": true,
+    "bServerSide": true,
+    "sAjaxSource": $('#listings').data('source')
+  });
+});
+
+
+//=============================================================================
+var VanCouverLatitude = 49.2815;
+var VancouverLongitude = -123.1240;
+var cityCenterLatLng;
+var map;
+var options;
+var bounds;
+var listings;
+var markersArray;
+var infoWindow;
+var infoWindowString;
+var circle;
+//==============================================================================
+function initialize() 
+{
+	cityCenterLatLng = new google.maps.LatLng(VanCouverLatitude, VancouverLongitude);
+	options = {
+		center : cityCenterLatLng,
+		zoom : 15,
+		mapTypeId : google.maps.MapTypeId.ROADMAP,
+		disableDefaultUI : false,
+		mapTypeControl : true,
+		streetViewControl : true,
+		mapTypeControlOptions : 
+		{
+			style : google.maps.MapTypeControlStyle.DEFAULT,
+			position : google.maps.ControlPosition.TOP_LEFT
+		}
+	};
+	map = new google.maps.Map(document.getElementById("map_canvas"), options);
+	//$("#map_canvas").css("border", "3px solid black");
+	//Because a button was added the get listings feature was moved to respond to that event
+	//getlistings();
+	//bounds = new google.maps.LatLngBounds();
+
+	infoWindow = new google.maps.InfoWindow({
+		//content : '<div class="infoWindow">Hello Bitches</div>'
+	});
+	
+	var c = {
+       strokeColor: "#ff0000",
+       strokeOpacity: 0.8,
+       strokeWeight: 3,
+       fillColor: "#b0c4de",
+       fillOpacity: 0.50,
+       map: map,
+       center: cityCenterLatLng,
+       radius: 500,
+       editable:true
+   };  
+	
+	circle = new google.maps.Circle(c);
+
+	google.maps.event.addListener(circle, 'center_changed', function() 
+	{
+  		displayInfo(circle);
+	});
+
+	google.maps.event.addListener(circle, 'radius_changed', function() 
+	{
+  		displayInfo(circle);
+	});
+	
+}
+//==============================================================================
+//This function shows the coordinate
+function displayInfo(widget) 
+{
+  	var info = document.getElementById('info');
+  	info.innerHTML = 'Circle Center:' + circle.get('center') + ', Circle radius ' + circle.get('radius');
+}
+
+
+
+//==============================================================================
+function getlistings() 
+{
+	//If calling url is http://localhost:3000/listings
+	//$.getJSON('listings.json', processlistings);
+	//If calling url is http://localhost:3000/listings/list
+	$.getJSON('geoView.json', processlistings);
+}
+
+//==============================================================================
+function processlistings(data) {
+	listings = data;
+	markersArray = [];
+	for( i = 0; i < listings.length; i++) 
+	{
+		var listing = listings[i];
+		var markerLatLng = new google.maps.LatLng(parseFloat(listing["latitude"]), parseFloat(listing["longitude"]));
+		var markerTitle = listing['name'];
+		var marker = createMarker(markerLatLng, markerTitle);
+		//Add attributes to each marker
+		marker.bmcId = listing['id'];
+		marker.bmcTelephone = listing['telephone'];
+		//marker.bmcCuisine = listing['cuisine'];
+		//marker.bmcDelivery = listing['delivery'];
+		//marker.bmcOpeningHrs1 = listing['opening_hrs1'];
+		//marker.bmcClosingHrs1 = listing['closing_hrs1'];
+		//marker.bmcOpeningHrs2 = listing['opening_hrs2'];
+		//marker.bmcClosingHrs2 = listing['closing_hrs2'];
+		//marker.bmcImageName = listing['imgName'];
+		
+		markersArray.push(marker);
+		//bounds.extend(markerLatLng);
+		//marker.setMap(map);
+	}
+	//map.fitBounds(bounds);
+}
+
+//==============================================================================
+function createMarker(latlng, html) 
+{
+	var tmpMarker = new google.maps.Marker({
+		position : latlng,
+		title : html,
+		map : map
+		//icon: 'http://gmaps-samples.googlecode.com/svn/trunk/markers/green/blank.png'
+	});
+
+	google.maps.event.addListener(tmpMarker, 'click', function() 
+	{
+		
+		addToInfoWindow(tmpMarker);
+		infoWindow.open(map, tmpMarker);
+		
+		 if(tmpMarker.getAnimation() != null)
+		 {
+		 tmpMarker.setAnimation(null);
+		 }
+		 else
+		 {
+		  //tmpMarker.'http://gmaps-samples.googlecode.com/svn/trunk/markers/green/blank.png';
+		  tmpMarker.setAnimation(google.maps.Animation.BOUNCE);
+		 window.setTimeout(function(){ tmpMarker.setAnimation(null);}, 2000);
+		 
+		 }
+		 
+	});
+	return tmpMarker;
+}
+
+//==============================================================================
+function addToInfoWindow(clickedMarker)
+{
+	infoWindowString = 
+	'<div class="infoWindow">'+
+	'<img id="iw-img" src="<%=asset_path('greenHeart.jpeg')%>" align="left"/>'+
+	'<div class="iw-titleBox">'+'<h3 id="iw-title">'+ clickedMarker.title +'</h3>'+
+	'<p>Cuisine: '+ clickedMarker.bmcCuisine + '</p>'+
+	'<p>' + clickedMarker.bmcTelephone + '</p>'+
+	'<p>delivers</p>'+
+	'</div>'+
+	'<div class="iw-buttonBox">'+
+	'<button type="button" class="iw-button" id="menuButton" onclick="menuButtonPressed()"> Menus</button>'+
+	'<button type="button" class="iw-button" id="photoButton" onclick="photoButtonPressed()">Photos</button>'+
+	'<button type="button" class="iw-button" id="moreInfoButton" onclick="infoButtonPressed()">Info</button>'+
+	'</div>'+
+	'</div>';
+	
+	infoWindow.setContent(infoWindowString);
+	
+}
+//==============================================================================
+function menuButtonPressed()
+{
+	alert("You want to see menus huh?");
+}
+//==============================================================================
+function photoButtonPressed()
+{
+	alert("You want to see photos huh?");
+}
+//==============================================================================
+function infoButtonPressed()
+{
+	alert("You want to see info huh?");
+}
+//==============================================================================
+function clearMarkers() 
+{
+	for(var i = 0; i < markersArray.length; i++) 
+	{
+		markersArray[i].setMap(null);
+	}
+}
+//==============================================================================
+function addCircle(someLatLngObj)
+{
+	
+	
+}
+//==============================================================================
+function moveLeft()
+{
+	$(function(){ $("#map_canvas").bind("mouseover", shiftLeft) });
+	$(function(){ $("#map_canvas").bind("mouseleave", shiftLeft) });
+	
+	
+}
+//==============================================================================
+function shiftLeft(evt)
+{
+	$("#map_canvas").toggleClass("shifted_mapCanvas");
+		
+}
+//==============================================================================
+$(window).load(function()
+{
+    google.maps.event.addDomListener(window, 'load', initialize);
+});
+//==============================================================================

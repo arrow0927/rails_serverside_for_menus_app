@@ -1,4 +1,4 @@
-<h3><%= link_to 'Click here to create a new Listing', new_listing_path %></h3>
+<b><%= link_to 'Click here to create a new Listing', new_listing_path %></b> | <b><%= link_to 'Click here to see Listings on Map', geoView_path %></b>
 
 <table id="listings" class="display" data-source="<%= listings_url(format: "json")%>">
 	<thead>
