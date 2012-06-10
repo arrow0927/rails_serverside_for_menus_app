@@ -13,7 +13,7 @@ gem 'cancan'
 gem 'rolify'
 gem 'aws-sdk'
 gem 'will_paginate'
-
+gem 'simple_form'
 
 group :development do
   gem 'annotate', :git=>'git://github.com/ctran/annotate_models.git'
@@ -27,7 +27,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails', "~>1.9.1.3"
   gem 'jquery-ui-rails'
-
+  gem 'twitter-bootstrap-rails'
 end
 
 

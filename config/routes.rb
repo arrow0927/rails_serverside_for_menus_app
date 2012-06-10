@@ -8,7 +8,7 @@ App0521::Application.routes.draw do
 
   #Commented out by Ash as we donot have a Users controller 
   #Devise has an implicit User controller
-  #resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index]
   
   authenticated :user do
     root :to => "listings#index"

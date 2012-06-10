@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 <p>=============================================================================</p>
 
-<%= link_to 'Edit this listing', edit_listing_path(@listing) %> |
-<%= link_to 'Back to table', listings_path %>
+<%= link_to 'Edit this listing', edit_listing_path(@listing), :class => 'btn btn-mini btn-danger' %> |
+<%= link_to 'Back to table', listings_path , :class => 'btn btn-mini'%>
 <p>=============================================================================</p>
 
 <p><b>Listing info Checked?:</b><%= @listing.checked %></p>
+<p><b>Menu State:</b><%= @listing.menu_state %></p>
 <p><b>Menu Collected:</b><%= @listing.menu_collected %></p>
 <p><b>Menu Digitized:</b><%= @listing.menu_digitized %></p>
 <p><b>Menu in Database:</b><%= @listing.menu_in_database %></p>
 <p><b>Keep listing:</b><%= @listing.keep %></p>
+<p><b>Menu Source:</b><%= @listing.menu_source %></p>
 <p><b>Get menu from website:</b><%= @listing.get_menu_from_website %></p>
 <p><b>Notes:</b><%= @listing.notes %></p>
 <p><b>id:</b> <%= @listing.id %></p>

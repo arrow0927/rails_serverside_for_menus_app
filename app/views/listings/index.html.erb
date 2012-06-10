@@ -1,13 +1,15 @@
-<b><%= link_to 'Click here to create a new Listing', new_listing_path %></b> | <b><%= link_to 'Click here to see Listings on Map', geoView_path %></b>
+<b><%= link_to 'Click here to create a new Listing', new_listing_path , :class => 'btn btn-mini btn-danger'%></b> 
 
 <table id="listings" class="display" data-source="<%= listings_url(format: "json")%>">
 	<thead>
   <tr>
   	<th>Checked?</th>
+  	<th>Menu State</th>
     <th>Menu Collected?</th>
     <th>Menu Digitized?</th>
     <th>Menu in DB?</th>
     <th>Keep this listing?</th>
+    <th>Menu Source</th>
     <th>Get menu from website?</th>
     <th>notes</th>
     <th>id</th>
