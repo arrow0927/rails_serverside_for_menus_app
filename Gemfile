@@ -14,6 +14,7 @@ gem 'rolify'
 gem 'aws-sdk'
 gem 'will_paginate'
 gem 'simple_form'
+gem 'twitter-bootstrap-rails'
 
 group :development do
   gem 'annotate', :git=>'git://github.com/ctran/annotate_models.git'
