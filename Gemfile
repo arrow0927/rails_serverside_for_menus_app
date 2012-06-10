@@ -15,6 +15,7 @@ gem 'aws-sdk'
 gem 'will_paginate'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
+gem 'jquery-ui-rails'
 
 group :development do
   gem 'annotate', :git=>'git://github.com/ctran/annotate_models.git'
@@ -27,8 +28,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails', "~>1.9.1.3"
-  gem 'jquery-ui-rails'
-  gem 'twitter-bootstrap-rails'
+  
+  
 end
 
 
