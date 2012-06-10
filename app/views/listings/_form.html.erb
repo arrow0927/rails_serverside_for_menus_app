@@ -2,15 +2,14 @@
 
 <%= simple_form_for(@listing, :html => {:multipart => true, :class=> 'form-horizontal'} ) do |f| %>
   <%= f.error_notification %>
+   <%= f.button :submit %>
+  
   <%= f.input :id , :readonly => true %>
   <%= f.input :name %>
   <%= f.input :checked , hint: "Has the data been cleansed and checked?" %>
-  <%= f.input :menu_state,  collection: [:collected, :digitized, :Database] %>
-  <%= f.input :menu_source, collection: [:text, :website, :n_a ] %>
-  <%= f.input :menu_collected %>
-  <%= f.input :menu_digitized %>
-  <%= f.input :menu_in_database %>
-  <%= f.input :get_menu_from_website %>
+  <%= f.input :menu_state,  collection: [:not_collected, :collected, :digitized, :Database] %>
+  <%= f.input :menu_source, collection: [:text, :website, :not_applicable ] %>
+  
   <%= f.input :keep , hint: "After checking for duplicates decide whether to keep or flag as a duplicate.."%>
   <%= f.input :notes, hint: "Further instructions on what needs to be done" %>
   <%= f.input :telephone %>
@@ -28,7 +27,7 @@
   <%= f.input :local_area %>
   <%= f.error :base %>
   
-  <%= f.button :submit %>
+ 
   
   
 <% end %>

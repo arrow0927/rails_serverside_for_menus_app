@@ -225,16 +225,19 @@ Line #18 from
 config.assets.compile = false
 to
 config.assets.compile = true
+========================================================================
+Creating a custom rake task to transfer contents of menu state checkboxes into menu_state dropdown column
+rails casts episode 66
+
+
+
+
+
+
 
 
 ========================================================================
-
-
-
-
-
-
-
+Pasted code from errors
 
 error causing line from index.html.erb for listings
 <!--<%= form_for :listing, :url => { :controller => "listings", :action => 'update' }, :remote => true do |l|%>-->
