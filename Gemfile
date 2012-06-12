@@ -19,7 +19,7 @@ gem 'jquery-ui-rails'
 gem 'jquery-datatables-rails', "~>1.9.1.3"
 group :development do
   gem 'annotate', :git=>'git://github.com/ctran/annotate_models.git'
-  #gem "sqlite3-ruby", "~> 1.3.3"
+  gem "sqlite3-ruby", "~> 1.3.3"
 end
 
 
