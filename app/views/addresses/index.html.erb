@@ -2,19 +2,26 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>business_name</th>
+    <th>address</th>
+    <th>telephone_1</th>
+    <th>url</th>
+    <th>fax</th>
+    <th>telephone_2</th>
+    <th>city</th>
   </tr>
 
 <% @addresses.each do |address| %>
   <tr>
-  	<>
+  	<td><%= address.business_name %></td>
+  	<td><%= address.address %></td>
+  	<td><%= address.telephone_1 %></td>
+  	<td><%= address.url %></td>
+  	<td><%= address.fax %></td>
+  	<td><%= address.telephone_2 %></td>
+  	<td><%= address.city %></td>
   	
-  	
-    <td><%= link_to 'Show', address %></td>
-    <td><%= link_to 'Edit', edit_address_path(address) %></td>
-    <td><%= link_to 'Destroy', address, confirm: 'Are you sure?', method: :delete %></td>
+    
   </tr>
 <% end %>
 </table>
@@ -22,3 +29,4 @@
 <br />
 
 <%= link_to 'New Address', new_address_path %>
+

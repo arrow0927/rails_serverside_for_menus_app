@@ -11,6 +11,7 @@
 #  url           :string(255)
 #  fax           :string(255)
 #  telephone_2   :string(255)
+#  city          :string(255)
 #
 
 class Address < ActiveRecord::Base

@@ -232,7 +232,10 @@ rails casts episode 66
 
 
 
-
+================================================================================
+Problems with csv document reading due to hidden characters from excel file
+Opened csv file with vi
+use vi to 
 
 
 

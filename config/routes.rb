@@ -1,5 +1,7 @@
 App0521::Application.routes.draw do
  
+  resources :businesses
+
   resources :addresses
 
   resources :images

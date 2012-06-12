@@ -1,9 +1,28 @@
 class AddressesController < ApplicationController
+  before_filter :authenticate_user!
+  
+
+  def create_addresses
+    @businesses = Business.all
+    @businesses.each do |business|
+        @address = Address.new()
+        @address.business_name = business.name
+        @address.address = business.address
+        @address.city = business.city
+        @address.telephone_1 = business.telephone1
+        @address.telephone_2 = business.telephone2
+        @address.url = business.url
+        @address.fax = business.fax
+        @address.save
+     end
+  end
+  
   # GET /addresses
   # GET /addresses.json
   def index
+    
+    #self.create_addresses
     @addresses = Address.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @addresses }

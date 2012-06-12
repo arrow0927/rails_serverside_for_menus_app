@@ -23,3 +23,22 @@ production:
   pool: 5
   username: mam
   password: techno8021
+
+#This is for the sqlite3 DB which contains the yellow pages data
+yplistings_development:
+ adapter: sqlite3
+ database: db/yplistings.sqlite3
+ pool: 5
+ timeout: 5000
+
+#Listings_test:
+ # adapter: sqlite3
+  #database: db/Listings.sqlite3
+  #pool: 5
+  #timeout: 5000
+
+#Listings_production:
+ # adapter: sqlite3
+  #database: db/Listings.sqlite3
+  #pool: 5
+  #timeout: 5000

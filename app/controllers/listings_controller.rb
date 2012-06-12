@@ -32,11 +32,47 @@ class ListingsController < ApplicationController
     end
   end
   
-=end
+
+  def create_listings_from_addresses
+    @addresses = Address.order("business_name ASC")
+    @addresses.each do|address|
+      @listing = Listing.new()
+      @listing.name = address.business_name
+      @listing.telephone = address.telephone_1
+      @listing.fax = address.fax
+      @listing.suite = "YP"
+      @listing.address = address.address
+      @listing.city = address.city
+      @listing.province = "BC"
+      @listing.postal_code = "YP"
+      @listing.latitude = nil
+      @listing.longitude = nil
+      @listing.business_type = "YP"
+      @listing.sub_type = "YP"
+      @listing.owner = "YP"
+      @listing.source = "Leah's yellow pages goodies ;-)"
+      @listing.local_area = "YP"
+      @listing.menu_collected = nil
+      @listing.menu_digitized = nil
+      @listing.menu_in_database = nil
+      @listing.keep = true
+      @listing.get_menu_from_website = nil
+      @listing.notes = "Secondary Phone: #{address.telephone_2}"
+      @listing.menu_state = nil
+      @listing.menu_source = "not_applicable"
+                  
+      @listing.save
+      
+    end
+  end
+=end 
+  
+  
+  
   
   def geoView
-     @listings = Listing.all
-    
+    @listings = Listing.all
+    #self.create_listings_from_addresses
     #render :text=>(@listings).to_json()
     #render :json =>@listings
     respond_to do |format|
