@@ -15,3 +15,23 @@
 //= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
 //= require_tree .
+
+/*The code bleow is used for rendering the partial that is used by the listings index.html file of the non datatables version*/
+$(function() 
+{
+	$("#listings th a, #listings .pagination a").live("click", function() 
+	{
+		$.getScript(this.href);
+		return false;
+	});
+	/*Ajaxing the search box */
+	$("#listings_search input").keyup(function() 
+		{
+			$.get($("#listings_search").attr("action") , $("#listings_search").serialize(), null, "script" )
+			return false;
+		});
+	
+	
+	
+});
+

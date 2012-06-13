@@ -7,6 +7,37 @@ tr:hover
   background:#FCF;
 }
 
+/*used by listings index NON DATATABLES implemntations*/
+table.non_datatables
+{
+  border-collapse: collapse;
+}
+.non_datatables td, .non_datatables th
+{
+  padding: 4px 10px;
+  border: solid 1px #AAA;
+}
+
+
+
+/*
+.non_datatables th .asc
+{
+  background-image: url(/images/up_arrow.gif);
+}
+.non_datatables th .desc
+{
+  background-image: url(/images/down_arrow.gif);
+}
+*/
+
+
+/*end styling for Listings index table non datatable version*/
+
+
+
+
+/*used by listings table datatables implementations*/
 .listings
 {
   table tr td

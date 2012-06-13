@@ -235,7 +235,25 @@ rails casts episode 66
 ================================================================================
 Problems with csv document reading due to hidden characters from excel file
 Opened csv file with vi
-use vi to 
+use vi to look at the file
+then see which characters need to be replaced. 
+If the source was an excel file then most likely there were "^M" is the culprit and it needs to be replaced with "\r" Thee are return characters and 
+they are different in windows and unix
+
+This replacement can be done in vi and the links for this are in chrome bookmarks folder on the toolbar
+bmc_mam>unix/VI
+
+
+
+========================================================================
+Changing the index page of the listings to have editable rows in it
+
+Railscasts 228 and 240.
+
+
+
+
+
 
 
 

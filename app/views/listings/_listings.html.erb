@@ -1,0 +1,56 @@
+<%= will_paginate @listings %>
+<%= hidden_field_tag :direction, params[:direction]%>
+	<%= hidden_field_tag :sort, params[:sort]%>
+<table class="non_datatables"  >
+	<tr>
+		<th><%= sortable "id" %> </th>
+		<th><%= sortable "name" %></th>
+		<th><%= sortable "telephone" %></th>
+		<th><%= sortable "fax" %> </th>
+		<th><%= sortable "suite" %> </th>
+		<th><%= sortable "address" %></th>
+		<th><%= sortable "city" %></th>
+		<th><%= sortable "province" %></th>
+		<th><%= sortable "postal_code" %></th>
+		<th><%= sortable "latitude" %></th>
+		<th><%= sortable "longitude" %></th>
+		<th><%= sortable "business_type" %></th>
+		<th><%= sortable "sub_type" %></th>
+		<th><%= sortable "owner" %></th>
+		<th><%= sortable "source" %></th>
+		<th><%= sortable "local_area" %></th>
+		<th><%= sortable "checked" %></th>
+		<th><%= sortable "keep" %></th>
+		<th><%= sortable "menu_state"%></th>
+		<th><%= sortable "menu_source" %></th>
+		<th><%= sortable "notes" %></th>
+	</tr>
+<% @listings.each do |listing| %>	
+<%= simple_form_for(listing, :html => {:multipart => true, :class=> '.form-horizontal'} ) do |f| %>
+	<tr>
+		<td><%= listing.id %></td>
+		<td><%= listing.name %></td>
+		<td><%= f.input :telephone %></td>
+		<td><%= f.input :fax %></td>
+		<td><%= f.input :suite %></td>
+		<td><%= f.input :address %></td>
+		<td><%= f.input :city %></td>
+		<td><%= f.input :province %></td>
+		<td><%= f.input :postal_code %></td>
+		<td><%= f.input :latitude %></td>
+		<td> <%= f.input :longitude %></td>
+		<td><%= f.input :business_type %></td>
+		<td> <%= f.input :sub_type %></td>
+		<td> <%= f.input :owner %></td>
+		<td> <%= listing.source %></td>
+		<td> <%= f.input :local_area %></td>
+		<td><%= f.input :checked %></td>
+		<td><%= f.input :keep %></td>
+		<td> <%= f.input :menu_state,  collection: [:not_collected, :collected, :digitized, :Database] %></td>
+		<td> <%= f.input :menu_source, collection: [:text, :website, :not_applicable ] %></td>
+		<td> <%= f.input :notes, :input_html => { :rows => 3 } %></td>
+	<td> <%= f.button :submit %></td>
+	</tr>
+	<% end %>
+	<% end %>
+</table>

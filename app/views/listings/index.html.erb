@@ -1,36 +1,10 @@
-<b><%= link_to 'New Listing', new_listing_path , :class => 'btn btn-warning'%></b> 
+<b><%= link_to 'New Listing', new_listing_path , :class => 'btn btn-warning'%></b>
 
-<table id="listings" class="display" data-source="<%= listings_url(format: "json")%>">
-	<thead>
-  <tr>
-  	<th>id</th>
-    <th>name</th>
-  	<th>Checked?</th>
-  	<th>Menu State</th>
-    <th>Menu Source</th>
-    <th>Keep this listing?</th>
-    <th>notes</th>
-    <th>telephone</th>
-    <th>fax</th>
-    <th>suite</th>
-    <th>address</th>
-    <th>city</th>
-    <th>province</th>
-    <th>postal code</th>
-    <th>latitude</th>
-    <th>longitude</th>
-    <th>business type</th>
-    <th>sub type</th>
-    <th>Owner</th>
-    <th>Local area</th>
-    
-  </tr>
-	</thead>
+<!--This file is used by NON Datatables version-->
+<%= form_tag listings_path, :method => 'get', :id=> "listings_search" do %>
 	
-	<tbody>
+<p><%= text_field_tag :search, params[:search] %><%= submit_tag "Search By Name", :name => nil %>	</p>
+	<div id="listings" ><%= render 'listings'%></div>
+<% end %>	
 
-	</tbody>
-</table>
-
-<br />
 

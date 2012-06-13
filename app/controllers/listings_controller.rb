@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_filter :authenticate_user! 
   
+  helper_method :sort_column, :sort_direction
 =begin  
   def get_all
     @temp_listings = TempListing.order("name ASC")
@@ -80,12 +81,23 @@ class ListingsController < ApplicationController
          format.json {render :json =>@listings}
        end
   end
-  
-  
+#============NON DATATABLES VERSION OF INDEX================================================  
+  def index
+    
+    #@listings = Listing.order(params[:sort] + " " +  params[:direction])
+    @listings = Listing.search(params[:search]).order(sort_column + " " +  sort_direction ).paginate(:per_page => 100, :page => params[:page])
+    #respond_to do |format|
+     # format.html # index.html.erb
+      #format.json { render json: @listing }
+    #end
+  end
   
  
-  # GET /listings
+ 
+#======DATATABLES VERSION OF INDEX METHOD
+ # GET /listings
   # GET /listings.json
+=begin
   def index
     #self.create_listings_from_temp_listings
     #@listings = Listing.all
@@ -94,6 +106,8 @@ class ListingsController < ApplicationController
       format.json { render json: ListingsDatatable.new(view_context) } 
     end
   end
+=end
+#=============================================
 
   # GET /listings/1
   # GET /listings/1.json
@@ -144,7 +158,8 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     respond_to do |format|
       if @listing.update_attributes(params[:listing])
-        format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
+        format.html { redirect_to listings_url , notice: 'Listing was successfully updated.'}
+        #format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
         format.json { head :no_content }
         format.js
       else
@@ -166,4 +181,21 @@ class ListingsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  #used by non datatables index
+  def sort_column
+    Listing.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+  
+  
+  
+  
+  
+  
+  
 end
