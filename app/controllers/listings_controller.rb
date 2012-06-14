@@ -82,6 +82,7 @@ class ListingsController < ApplicationController
        end
   end
 #============NON DATATABLES VERSION OF INDEX================================================  
+=begin
   def index
     
     #@listings = Listing.order(params[:sort] + " " +  params[:direction])
@@ -92,12 +93,10 @@ class ListingsController < ApplicationController
     #end
   end
   
- 
- 
+=end 
 #======DATATABLES VERSION OF INDEX METHOD
  # GET /listings
   # GET /listings.json
-=begin
   def index
     #self.create_listings_from_temp_listings
     #@listings = Listing.all
@@ -106,7 +105,6 @@ class ListingsController < ApplicationController
       format.json { render json: ListingsDatatable.new(view_context) } 
     end
   end
-=end
 #=============================================
 
   # GET /listings/1
@@ -158,8 +156,8 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     respond_to do |format|
       if @listing.update_attributes(params[:listing])
-        format.html { redirect_to listings_url , notice: 'Listing was successfully updated.'}
-        #format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
+        #format.html { redirect_to listings_url , notice: 'Listing was successfully updated.'}
+        format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
         format.json { head :no_content }
         format.js
       else

@@ -1,0 +1,11 @@
+<b><%= link_to 'New Listing', new_listing_path , :class => 'btn btn-warning'%></b>
+
+<!--This file is used by NON Datatables version-->
+<!--<%= form_tag listings_path, :method => 'get', :id=> "listings_search" do %>
+	
+<p><%= text_field_tag :search, params[:search] %><%= submit_tag "Search By Name", :name => nil %>	</p>-->
+
+<div id="listings" ><%= render 'listings'%></div>
+<% end %>	
+
+
