@@ -27,7 +27,7 @@ $(function()
 	/*Ajaxing the search box */
 	$("#listings_search input").keyup(function() 
 		{
-			$.get($("#listings_search").attr("action") , $("#listings_search").serialize(), null, "script" )
+			$.get($("#listings_search").attr("action"), $("#listings_search").serialize(), null, "script" )
 			return false;
 		});
 	

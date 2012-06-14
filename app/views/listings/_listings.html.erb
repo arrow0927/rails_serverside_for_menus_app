@@ -4,39 +4,36 @@
 <table class="non_datatables"  >
 	<tr>
 		<th>Submit</th>
-		<th><%= sortable "name" %></th>
-		<th><%= sortable "suite" %> </th>
-		<th><%= sortable "address" %></th>
-		<th><%= sortable "telephone" %></th>
-		<th><%= sortable "keep" %></th>
-		<th><%= sortable "checked" %></th>
-		<th><%= sortable "menu_state"%></th>
-		<th><%= sortable "menu_source" %></th>
-		<th><%= sortable "notes" %></th>
-		<th><%= sortable "fax" %> </th>
-		<th><%= sortable "city" %></th>
-		<th><%= sortable "province" %></th>
-		<th><%= sortable "postal_code" %></th>
-		<th><%= sortable "latitude" %></th>
-		<th><%= sortable "longitude" %></th>
-		<th><%= sortable "business_type" %></th>
-		<th><%= sortable "sub_type" %></th>
-		<th><%= sortable "owner" %></th>
-		<th><%= sortable "source" %></th>
-		<th><%= sortable "local_area" %></th>
-		<th><%= sortable "id" %> </th>
 		
-		
-		
-		
+		<th>Name</th>
+		<th>Suite</th>
+		<th>Address</th>
+		<th>Telephone</th>
+		<th>Keep</th>
+		<th>Checked</th>
+		<th>Menu State</th>
+		<th>Menu Source</th>
+		<th>Notes</th>
+		<th>Fax</th>
+		<th>City %></th>
+		<th>Province</th>
+		<th>Postal Code</th>
+		<th>Latitude</th>
+		<th>Longitude</th>
+		<th>Business Type</th>
+		<th>Sub Type</th>
+		<th>Owner</th>
+		<th>Source</th>
+		<th>Local Area</th>
+		<th>id</th>
 	</tr>
 <% @listings.each do |listing| %>	
 <%= simple_form_for(listing, :html => {:multipart => true, :class=> '.form-horizontal'} ) do |f| %>
 	<tr>
 		<td> <%= f.button :submit, :input_html => { :size => 20 } %></td>
 		
-		<td><%= f.input :name %></td>
-		<td><%= f.input :suite %></td>
+		<td><%= f.input :name, :input_html => { :size => 10} %></td>
+		<td><%= f.input :suite, :input_html => { :size => 10} %></td>
 		<td><%= f.input :address %></td>
 		<td><%= f.input :telephone %></td>
 		<td><%= f.input :keep %></td>
