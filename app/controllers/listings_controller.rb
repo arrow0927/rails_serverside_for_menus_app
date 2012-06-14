@@ -85,7 +85,7 @@ class ListingsController < ApplicationController
   def index
     
     #@listings = Listing.order(params[:sort] + " " +  params[:direction])
-    @listings = Listing.search(params[:search]).order(sort_column + " " +  sort_direction ).paginate(:per_page => 100, :page => params[:page])
+    @listings = Listing.search(params[:search]).order(sort_column + " " +  sort_direction ).paginate(:per_page => 25, :page => params[:page])
     #respond_to do |format|
      # format.html # index.html.erb
       #format.json { render json: @listing }
