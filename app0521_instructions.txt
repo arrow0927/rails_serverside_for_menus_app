@@ -96,6 +96,18 @@ then to every user in the users table I added a role lie this at the ruby consol
 user1 = User.find(1)
 user1.add_role :admin
 
+
+creating a new user:
+At the command line to create a user
+1) Go to rails console
+2) user = user.new
+3) user.name = "xxx"
+4) user.email= "xxx"
+5) user.password = "xxx"
+user.save
+
+Done
+
 ==============================================================================
 paperclip
 changed the _form.html.erb helper method to add "multipart" to facilitate image upload
@@ -242,9 +254,18 @@ they are different in windows and unix
 
 This replacement can be done in vi and the links for this are in chrome bookmarks folder on the toolbar
 bmc_mam>unix/VI
+================================================================================
+Creating PDFs with Prawn
+Railscasts 153
 
-
-
+================================================================================
+managing releases
+heroku has a feature of release management that is available to every app
+to see a list of all the released version
+type the command
+heroku releases
+see this url
+https://devcenter.heroku.com/articles/releases
 ========================================================================
 Changing the index page of the listings to have editable rows in it
 

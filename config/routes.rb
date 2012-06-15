@@ -8,9 +8,14 @@ App0521::Application.routes.draw do
 
   devise_for :users
 
+  #Trying to use Prawn for PDF view
+  match "listings/show_notes" => "listings#show_notes", :as => :show_notes
+  
   #Commented out by Ash as we donot have a Users controller 
   #Devise has an implicit User controller
-  resources :users, :only => [:show, :index]
+  #users must always be below devise_for call in the routes file
+  
+  resources :users , :only => [:show, :index]
   
   authenticated :user do
     root :to => "listings#index"

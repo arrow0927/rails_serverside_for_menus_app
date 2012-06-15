@@ -72,37 +72,47 @@ class ListingsController < ApplicationController
   
   
   def geoView
-    @listings = Listing.all
+    
     #self.create_listings_from_addresses
     #render :text=>(@listings).to_json()
     #render :json =>@listings
     respond_to do |format|
-         format.html #list.html.erb
+         format.html do#list.html.erb
+           @listings = Listing.all
+         end
          format.json {render :json =>@listings}
-       end
+       
+     end
   end
 #============NON DATATABLES VERSION OF INDEX================================================  
 =begin
   def index
     
     #@listings = Listing.order(params[:sort] + " " +  params[:direction])
-    @listings = Listing.search(params[:search]).order(sort_column + " " +  sort_direction ).paginate(:per_page => 100, :page => params[:page])
+    @listings = Listing.search(params[:search]).order(sort_column + " " +  sort_direction ).paginate(:per_page => 20, :page => params[:page])
     #respond_to do |format|
      # format.html # index.html.erb
       #format.json { render json: @listing }
     #end
   end
-  
-=end 
+=end
 #======DATATABLES VERSION OF INDEX METHOD
  # GET /listings
   # GET /listings.json
   def index
     #self.create_listings_from_temp_listings
-    #@listings = Listing.all
+    
     respond_to do |format|
-      format.html # index.html.erb
+      format.html do# index.html.erb
+        @listings = Listing.all
+      end
       format.json { render json: ListingsDatatable.new(view_context) } 
+      #format.pdf do 
+        #pdf = Prawn::Document.new
+        #pdf.text "Hello World"
+        #send_data pdf.render, filename: "listings.pdf", type: "application/pdf", disposition: "inline"
+      #end
+      
     end
   end
 #=============================================
@@ -110,11 +120,16 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-    @listing = Listing.find(params[:id])
-
     respond_to do |format|
-      format.html # show.html.erb
+      format.html do # show.html.erb
+       @listing = Listing.find(params[:id]) 
+      end
       format.json { render json: @listing }
+      #format.pdf do 
+        #pdf = Prawn::Document.new
+        #pdf.text "Hello World"
+        #send_data pdf.render
+      #end
     end
   end
 
@@ -159,7 +174,7 @@ class ListingsController < ApplicationController
         #format.html { redirect_to listings_url , notice: 'Listing was successfully updated.'}
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
         format.json { head :no_content }
-        format.js
+        #format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @listing.errors, status: :unprocessable_entity }
@@ -180,6 +195,23 @@ class ListingsController < ApplicationController
     end
   end
   
+  def show_notes
+    @listings = Listing.where("listings.notes IS NOT NULL").order("listings.name ASC")
+    #@listings = Listing.all
+    respond_to do |format|
+        format.pdf do
+        #pdf = Prawn::Document.new
+        pdf = ListingsNotes.new(@listings)
+       
+        send_data pdf.render, filename: "listings_notes.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
+  end
+  
+  
+  
   private
   #used by non datatables index
   def sort_column
@@ -189,11 +221,5 @@ class ListingsController < ApplicationController
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
-  
-  
-  
-  
-  
-  
   
 end

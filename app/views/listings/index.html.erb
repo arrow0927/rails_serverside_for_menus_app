@@ -1,4 +1,5 @@
 <b><%= link_to 'New Listing', new_listing_path , :class => 'btn btn-warning'%></b> 
+<b><%= link_to 'Printable List: Listings name + notes', show_notes_path(format: "pdf") , :class => 'btn btn-warning'%></b>
 
 <table id="listings" class="display" data-source="<%= listings_url(format: "json")%>">
 	<thead>

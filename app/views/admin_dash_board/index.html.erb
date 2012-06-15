@@ -1,18 +1,25 @@
 <h1>Administrator Dash Board</h1>
 <p>This page will allow you to monitor and control various tasks and run reports<p>
 	
-<p>These are the database tables that will need to be monitored:</br>
+
 	<ul>
-		<li><%=link_to "Listings table",  'listings_path' %></li>
+		<li><%=link_to "Listings table",  listings_path %></li>
 		<li><%=link_to "Menu Items table",  '#' %></li>
 		<li><%=link_to "Images table",  '#' %></li>
-		<li><%=link_to "Users table",  '#' %></li>
-		
 		<li><%=link_to "Ingredients table",  '#' %></li>
 		<li><%=link_to "tags table",  '#' %></li>
 		<li><%=link_to "Locations table",  '#' %></li>
 		<li><%=link_to "Events table",  '#' %></li>
 		<li><%=link_to "Addresses table",  '#' %></li>
+		
+		
+		<li><%=link_to "Sign Up user",  user_password_path %></li>
+		<li><%=link_to "Sign Up user",  new_user_password_path %></li>
+		<li><%=link_to "Sign Up user",  edit_user_password_path %></li>
+		<li><%=link_to "Sign Up user",  cancel_user_registration_path %></li>
+		<li><%=link_to "Sign Up user",  user_registration_path %></li>
+		<li><%=link_to "Sign Up user",  edit_user_registration_path %></li>		
+		<li><%=link_to "Sign Up user",  users_path %></li>
 		
 	</ul>
 
