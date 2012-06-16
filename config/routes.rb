@@ -1,12 +1,20 @@
 App0521::Application.routes.draw do
  
+  #get "users/index"
+
+  #get "users/show"
+
+  devise_for :users
+  
+  resources :listings
+  
+  resources :menu_items
+
   resources :businesses
 
   resources :addresses
 
   resources :images
-
-  devise_for :users
 
   #Trying to use Prawn for PDF view
   match "listings/show_notes" => "listings#show_notes", :as => :show_notes
@@ -15,7 +23,7 @@ App0521::Application.routes.draw do
   #Devise has an implicit User controller
   #users must always be below devise_for call in the routes file
   
-  resources :users , :only => [:show, :index]
+  resources :users, :only => [:show, :index]
   
   authenticated :user do
     root :to => "listings#index"
@@ -23,11 +31,11 @@ App0521::Application.routes.draw do
   
   root :to => "listings#index"
   
-  resources :listings
+  
 
   match "/geoView" => "listings#geoView", :as => :geoView
   
    #added by Ash
-  resources :admin_dash_board, :only => :index
+  resources :admin_dash_board,  :only => :index
 
 end

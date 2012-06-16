@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @menu_item.name %>
+</p>
+
+<p>
+  <b>Listing name:</b>
+  <%= @menu_item.listing_name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @menu_item.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @menu_item.price %>
+</p>
+
+<p>
+  <b>Category1:</b>
+  <%= @menu_item.category1 %>
+</p>
+
+<p>
+  <b>Category2:</b>
+  <%= @menu_item.category2 %>
+</p>
+
+<p>
+  <b>Category3:</b>
+  <%= @menu_item.category3 %>
+</p>
+
+<p>
+  <b>Addon1:</b>
+  <%= @menu_item.addOn1 %>
+</p>
+
+<p>
+  <b>Addon1price:</b>
+  <%= @menu_item.addOn1price %>
+</p>
+
+<p>
+  <b>Addon2:</b>
+  <%= @menu_item.addOn2 %>
+</p>
+
+<p>
+  <b>Addon2price:</b>
+  <%= @menu_item.addOn2price %>
+</p>
+
+
+<%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
+<%= link_to 'Back', menu_items_path %>
