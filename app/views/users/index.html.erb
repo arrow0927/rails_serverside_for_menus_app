@@ -1,39 +1,24 @@
-<table id="users" %>
+<table id="users_index_table" %>
   <tr>
   	<th>id</th>
     <th>user name</th>
   	<th>user email</th>
-  	<th>user encrypted pw</th>
-    <th>user reset password token</th>
-    <th>user reset password sent at </th>
-    <th>user remember created at</th>
-    <th>sign in count</th>
-    <th>current sign in at</th>
-    <th>last sign in at</th>
-    <th>current sign in ip</th>
-    <th>last sign in ip</th>
-    <th>created at</th>
-    <th>updated at</th>
-    <th>role</th>
-    
+  	<th>user role</th>
+  	<th>reset password</th> 
+  	<th></th> 
+  	<th></th>  
+    <th></th> 
   </tr>
 	<% @users.each do |user| %>
   <tr>
   	<td><%= user.name %></td>
   	<td><%= user.email %></td>
-  	<td><%= user.encrypted_password %></td>
-  	<td><%= user.reset_password_token %></td>
-  	<td><%= user.reset_password_sent_at %></td>
-  	<td><%= user.remember_created_at %></td>
-  	<td><%= user.sign_in_count %></td>
-  	<td><%= user.current_sign_in_at %></td>
-  	<td><%= user.last_sign_in_at %></td>
-  	<td><%= user.current_sign_in_ip %></td>
-    <td><%= user.last_sign_in_ip %></td>
-    <td><%= user.created_at %></td>
-    <td><%= user.updated_at %></td>
-    
+  	<td><%= user.roles  %></td>
+  	<th><%= link_to 'reset password', edit_user_password_path %></th> 
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-	
+<%= link_to 'New User', new_user_registration_path %>	

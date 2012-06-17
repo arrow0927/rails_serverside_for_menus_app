@@ -5,14 +5,15 @@ src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAcCH7ntWPihR8rdCsblUiSRSNp
 <%= stylesheet_link_tag 'application' %><%= javascript_include_tag 'application'%>
 
 <body onload="initialize()">
-	<h4><%= link_to 'Back to listings table', listings_path %></h4>
 	<div id="control_panel">
 	<input type="button" onclick="getlistings();" value="Add Markers">
 	<input type="button" onclick="clearMarkers();" value="Remove Markers">
 	
 	</div>
+	
 	<div id="info"></div>
 	<div id="map_canvas" ></div>
+	<div id="map_recommend"></div>
 	
 	
 	

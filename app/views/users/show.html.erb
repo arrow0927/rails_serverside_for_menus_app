@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<p><%= link_to 'Edit this listing', edit_user_path(@user), :class => 'btn btn-warning' %> </p>
+
+<div class="well">
+<p><b>[<%= @user.id %> ] <%= @user.name %></b></p>
+</div>
+
+<div class="well">	
+<p><b>User roles</b><%= @user.roles %></p>
+<p><b>User encrypted password</b><%= @user.encrypted_password %></p>
+<p><b>User reset password token</b><%= @user.reset_password_token %></p>
+<p><b>User reset password sent at</b><%= @user.reset_password_sent_at %></p>
+<p><b>User remember created at</b><%= @user.remember_created_at %></p>
+<p><b>User sign in count</b><%= @user.sign_in_count %></p>
+<p><b>User current sign in</b><%= @user.current_sign_in_at %></p>
+<p><b>User last sign in</b><%= @user.last_sign_in_at %></p>
+<p><b>User current_sign_in_ip</b><%= @user.current_sign_in_ip %></p>
+<p><b>User last_sign_in_ip</b><%= @user.last_sign_in_ip %></p>
+<p><b>User created_at</b><%= @user.created_at %></p>
+<p><b>User updated_at</b><%= @user.updated_at %></p>
+
+</div>

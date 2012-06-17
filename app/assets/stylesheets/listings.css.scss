@@ -65,10 +65,11 @@ dd
 }
 #map_canvas
 {
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 80%;
+  height: 80%;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  vertical-align: left; 
  /*
   html 
   { 
@@ -103,6 +104,15 @@ dd
  
   
 }
+/* This is the right panel that will appear next to the map however it is now messed up*/
+#map_recommend
+{
+  height: 80%;
+  width: 200px;
+  vertical-align: right; 
+  background:#000;
+}
+
 #control_panel
 {
   width: 50%;
@@ -116,6 +126,8 @@ dd
   -webkit-border-radius: 20px;
   vertical-align: middle; 
 }
+
+
 
 .infoWindow
 {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615233338) do
+ActiveRecord::Schema.define(:version => 20120617035802) do
 
   create_table "addresses", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(:version => 20120615233338) do
     t.string   "telephone_2"
     t.string   "city"
   end
+
+  create_table "assets", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "uploaded_file_file_name"
+    t.string   "uploaded_file_content_type"
+    t.integer  "uploaded_file_file_size"
+    t.datetime "uploaded_file_updated_at"
+  end
+
+  add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
 
   create_table "businesses", :force => true do |t|
     t.string   "name"
@@ -128,5 +140,15 @@ ActiveRecord::Schema.define(:version => 20120615233338) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "works", :force => true do |t|
+    t.string   "file_name"
+    t.string   "person_name"
+    t.date     "date_assigned"
+    t.date     "date_completed"
+    t.text     "comments"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
 end

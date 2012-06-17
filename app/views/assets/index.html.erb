@@ -1,0 +1,23 @@
+<h1>Assets</h1>
+
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Uploaded Files</th>
+   
+  </tr>
+
+<% @assets.each do |asset| %>
+  <tr>
+    <td><%= "#{User.find(asset.user_id).name}'s file " %></td>
+    <td>Click to Download: <%= link_to asset.file_name, download_url(asset) %></td>
+    <td><%= link_to '|  Show the file |', asset %></td>
+    <td><%= link_to '|  Edit this file |', edit_asset_path(asset) %></td>
+    <td><%= link_to '|  Destroy this file |', asset, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Asset', new_asset_path %>

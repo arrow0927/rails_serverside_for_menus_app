@@ -273,7 +273,8 @@ Railscasts 228 and 240.
 
 
 
-
+=========================================================================
+Adding a dropbox style file manager
 
 
 

@@ -1,13 +1,13 @@
 App0521::Application.routes.draw do
  
-  #get "users/index"
-
-  #get "users/show"
+ #this route is for file downloads
+ match "assets/get/:id" => "assets#get", :as => "download"
+ 
+ 
+  resources :assets
 
   devise_for :users
     
-  resources :menu_items
-
   resources :businesses
 
   resources :addresses
@@ -21,7 +21,7 @@ App0521::Application.routes.draw do
   #Devise has an implicit User controller
   #users must always be below devise_for call in the routes file
   
-  resources :users, :only => [:show, :index]
+  resources :users #, :only => [:show, :index] #Uncommented by Ash in order to let users be editable
   #Ensure that resources :listings is ALWAYS 
   #below devise_for:users and also below  match "listings/show_notes" => "listings#show_notes", :as => :show_notes
   resources :listings
