@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 	
 	#Method added by the Rolify gem
 	rolify
-	has_many :assets
+	
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

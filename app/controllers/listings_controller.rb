@@ -80,8 +80,8 @@ class ListingsController < ApplicationController
          format.html do#list.html.erb
            @listings = Listing.all
          end
+          @listings = Listing.all
          format.json {render :json =>@listings}
-       
      end
   end
 #============NON DATATABLES VERSION OF INDEX================================================  
