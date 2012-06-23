@@ -1,0 +1,71 @@
+<h1>Listing unused_listings</h1>
+<p>Total number of Unused Listings = <%=@unused_listings.count %></p>
+<p>Total number of Listings = <%=@listings.count %></p>
+<table id="unused_listings">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>telephone</th>
+    <th>fax</th>
+    <th>suite</th>
+    <th>address</th>
+    <th>city</th>
+    <th>province</th>
+    <th>postal_code</th>
+    <th>latitude</th>
+    <th>longitude</th>
+    <th>business_type</th>
+    <th>sub_type</th>
+    <th>owner</th>
+    <th>source</th>
+    <th>local_area</th>
+    <th>checked</th>
+    <th>menu_collected</th>
+    <th>menu_digitized</th>
+    <th>menu_in_database</th>
+    <th>keep</th>
+    <th>get_menu_from_website</th>
+    <th>notes</th>
+    <th>menu_state</th>
+    <th>menu_source</th>
+  </tr>
+
+<% @unused_listings.each do |unused_listing| %>
+  <tr>
+  	<td><%= unused_listing.id %></td>
+  	<td><%= unused_listing.name %></td>
+  	<td><%= unused_listing.telephone %></td>
+  	<td><%= unused_listing.fax %></td>
+  	<td><%= unused_listing.suite %></td>
+  	<td><%= unused_listing.address %></td>
+  	<td><%= unused_listing.city %></td>
+  	<td><%= unused_listing.province %></td>
+  	<td><%= unused_listing.postal_code %></td>
+  	<td><%= unused_listing.latitude %></td>
+  	<td><%= unused_listing.longitude %></td>
+  	<td><%= unused_listing.business_type %></td>
+  	<td><%= unused_listing.sub_type %></td>
+  	<td><%= unused_listing.owner %></td>
+  	<td><%= unused_listing.source %></td>
+  	<td><%= unused_listing.local_area %></td>
+  	<td><%= unused_listing.checked %></td>
+  	<td><%= unused_listing.menu_collected %></td>
+  	<td><%= unused_listing.menu_digitized %></td>
+  	<td><%= unused_listing.menu_in_database %></td>
+  	<td><%= unused_listing.keep %></td>
+  	<td><%= unused_listing.get_menu_from_website %></td>
+  	<td><%= unused_listing.notes %></td>
+  	<td><%= unused_listing.menu_state %></td>
+  	<td><%= unused_listing.menu_source %></td>
+  	
+  	
+    <td><%= link_to 'Show', unused_listing %></td>
+    <td><%= link_to 'Edit', edit_unused_listing_path(unused_listing) %></td>
+    <td><%= link_to 'Destroy', unused_listing, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Unused listing', new_unused_listing_path %>

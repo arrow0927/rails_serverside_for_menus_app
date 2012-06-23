@@ -1,0 +1,13 @@
+// Place all the styles related to the unusedListings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table#unused_listings th, td
+{
+  border: 1px solid black;
+  width: 80%;
+}
+table#unused_listings th
+{
+  background-color:green;
+  color:white;
+}

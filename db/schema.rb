@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617035802) do
+ActiveRecord::Schema.define(:version => 20120622232737) do
 
   create_table "addresses", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -114,6 +114,35 @@ ActiveRecord::Schema.define(:version => 20120617035802) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "unused_listings", :force => true do |t|
+    t.string   "name"
+    t.string   "telephone"
+    t.string   "fax"
+    t.string   "suite"
+    t.string   "address"
+    t.string   "city"
+    t.string   "province"
+    t.string   "postal_code"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "business_type"
+    t.string   "sub_type"
+    t.string   "owner"
+    t.string   "source"
+    t.string   "local_area"
+    t.boolean  "checked"
+    t.boolean  "menu_collected"
+    t.boolean  "menu_digitized"
+    t.boolean  "menu_in_database"
+    t.boolean  "keep"
+    t.boolean  "get_menu_from_website"
+    t.text     "notes"
+    t.string   "menu_state"
+    t.string   "menu_source"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -13,3 +13,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+#Add this file which relates to Amazon Webservices per the stackoverflow answer
+s3_credentials.yml

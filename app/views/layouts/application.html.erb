@@ -13,8 +13,8 @@
 	</head>
 	<!--<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>-->
-	
-	
+	 
+	<!--<%= debug(params) if Rails.env.development? %>-->
 	<body>
 		 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -28,10 +28,10 @@
         <div class="nav-collapse">
           <ul class="nav">
             <li><%= link_to "Browse Listings", listings_path %></li>
+            <li><%= link_to "Seperated Duplicate Listings" , unused_listings_path %></li>
             <li><%= link_to "Admin Dash Board" , admin_dash_board_index_path %></li>
-            <li><%= link_to "Contact Us", '#' %></li>
             <li><%= link_to "Map" , '/geoView' %></li>
-            
+            <li><%= link_to "Contact Us", '#' %></li>
             <%if user_signed_in? %>
 				<li><%= current_user.email%></li>
 				<li><%= link_to "Sign Out",  destroy_user_session_path, :method => :delete , :class => 'btn btn-mini brn-danger'%></li>

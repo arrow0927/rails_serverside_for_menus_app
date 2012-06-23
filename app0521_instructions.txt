@@ -97,7 +97,7 @@ user1 = User.find(1)
 user1.add_role :admin
 
 
-creating a new user:
+creating a new user on the command:
 At the command line to create a user
 1) Go to rails console
 2) user = user.new
