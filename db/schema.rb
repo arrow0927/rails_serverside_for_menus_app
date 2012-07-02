@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622232737) do
+ActiveRecord::Schema.define(:version => 20120630145651) do
 
   create_table "addresses", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -24,18 +24,6 @@ ActiveRecord::Schema.define(:version => 20120622232737) do
     t.string   "telephone_2"
     t.string   "city"
   end
-
-  create_table "assets", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.string   "uploaded_file_file_name"
-    t.string   "uploaded_file_content_type"
-    t.integer  "uploaded_file_file_size"
-    t.datetime "uploaded_file_updated_at"
-  end
-
-  add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
 
   create_table "businesses", :force => true do |t|
     t.string   "name"
@@ -142,6 +130,35 @@ ActiveRecord::Schema.define(:version => 20120622232737) do
     t.string   "menu_source"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+  end
+
+  create_table "unwanted_cities", :force => true do |t|
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "name"
+    t.string   "telephone"
+    t.string   "fax"
+    t.string   "suite"
+    t.string   "address"
+    t.string   "city"
+    t.string   "province"
+    t.string   "postal_code"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "business_type"
+    t.string   "sub_type"
+    t.string   "owner"
+    t.string   "source"
+    t.string   "local_area"
+    t.boolean  "checked"
+    t.boolean  "menu_collected"
+    t.boolean  "menu_digitized"
+    t.boolean  "menu_in_database"
+    t.boolean  "keep"
+    t.boolean  "get_menu_from_website"
+    t.text     "notes"
+    t.string   "menu_state"
+    t.string   "menu_source"
   end
 
   create_table "users", :force => true do |t|

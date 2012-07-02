@@ -67,10 +67,47 @@ class ListingsController < ApplicationController
     end
   end
 =end 
+#==============================================================================
+ #Get unwanted listings from listings table
+ def create_unwanted_listings_from_city
+    #@listings = Listing.where("city != ?").order("name ASC").order("address ASC")
+    @listings.each do|listing|
+      @unwanted_city = UnwantedCity.new()
+      @unwanted_city.name = listing.name
+      @unwanted_city.telephone = listing.telephone
+      @unwanted_city.fax = listing.fax
+      @unwanted_city.suite = listing.suite
+      @unwanted_city.address = listing.address
+      @unwanted_city.city = listing.city
+      @unwanted_city.province = listing.province
+      @unwanted_city.postal_code = listing.postal_code
+      @unwanted_city.latitude = listing.latitude
+      @unwanted_city.longitude = listing.longitude
+      @unwanted_city.business_type = listing.business_type
+      @unwanted_city.sub_type = listing.sub_type
+      @unwanted_city.owner = listing.owner
+      @unwanted_city.source = listing.source
+      @unwanted_city.local_area = listing.local_area
+      @unwanted_city.checked =listing.checked
+      @unwanted_city.menu_collected = listing.menu_collected 
+      @unwanted_city.menu_digitized = listing.menu_digitized
+      @unwanted_city.menu_in_database = listing.menu_in_database
+      @unwanted_city.keep = listing.keep
+      @unwanted_city.get_menu_from_website = listing.get_menu_from_website
+      @unwanted_city.notes = listing.notes
+      @unwanted_city.menu_state = listing.menu_state
+      @unwanted_city.menu_source = listing.menu_source
+                  
+      @unwanted_city.save
+      
+    end
+  end
   
   
   
   
+  
+#==============================================================================
   def geoView
     
     #self.create_listings_from_addresses

@@ -1,0 +1,71 @@
+<h1>Listing unwanted_cities</h1>
+<!--
+<%= @uwcities = UnwantedCity.all %>
+<%= @uwcities.inspect%>
+-->
+<p>There are <%=Listing.all.count %> listings in the database that are Vancouver cities</p>
+<p>There are <%=@unwanted_cities.count %> listings in the database that are non Vancouver cities</p>
+<table>
+  <tr>
+    <th>name</th>
+    <th>telephone</th>
+    <th>fax</th>
+    <th>suite</th>
+    <th>address</th>
+    <th>city</th>
+    <th>province</th>
+    <th>postal_code</th>
+    <th>latitude</th>
+    <th>longitude</th>
+    <th>business_type</th>
+    <th>sub_type</th>
+    <th>owner</th>
+    <th>source</th>
+    <th>local_area</th>
+    <th>checked</th>
+    <th>menu_collected</th>
+    <th>menu_digitized</th>
+    <th>menu_in_database</th>
+    <th>keep</th>
+    <th>get_menu_from_website</th>
+    <th>notes</th>
+    <th>menu_state</th>
+    <th>menu_source</th>
+  </tr>
+
+<% @unwanted_cities.each do |unwanted_city| %>
+  <tr>
+  	<td><%= unwanted_city.name %></td>
+  	<td><%= unwanted_city.telephone %></td>
+  	<td><%= unwanted_city.fax %></td>
+  	<td><%= unwanted_city.suite %></td>
+  	<td><%= unwanted_city.address %></td>
+  	<td><%= unwanted_city.city %></td>
+  	<td><%= unwanted_city.province %></td>
+  	<td><%= unwanted_city.postal_code %></td>
+  	<td><%= unwanted_city.latitude %></td>
+  	<td><%= unwanted_city.longitude %></td>
+  	<td><%= unwanted_city.business_type %></td>
+  	<td><%= unwanted_city.sub_type %></td>
+  	<td><%= unwanted_city.owner %></td>
+  	<td><%= unwanted_city.source %></td>
+  	<td><%= unwanted_city.local_area %></td>
+  	<td><%= unwanted_city.checked %></td>
+  	<td><%= unwanted_city.menu_collected %></td>
+  	<td><%= unwanted_city.menu_digitized %></td>
+  	<td><%= unwanted_city.menu_in_database %></td>
+  	<td><%= unwanted_city.keep %></td>
+  	<td><%= unwanted_city.get_menu_from_website %></td>
+  	<td><%= unwanted_city.notes %></td>
+  	<td><%= unwanted_city.menu_state %></td>
+  	<td><%= unwanted_city.menu_source %></td>
+    <td><%= link_to 'Show', unwanted_city %></td>
+    <td><%= link_to 'Edit', edit_unwanted_city_path(unwanted_city) %></td>
+    <td><%= link_to 'Destroy', unwanted_city, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Unwanted city', new_unwanted_city_path %>
