@@ -1,4 +1,6 @@
 class UnwantedCitiesController < ApplicationController
+  before_filter :authenticate_user! 
+  
   def create_unwanted_listings
 
     @listings = Listing.where(['city != ?', "Vancouver"]).where(['city != ?', " Vancouver"]).where(['city != ?', "Vancouver "])

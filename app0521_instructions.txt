@@ -1,5 +1,10 @@
 These are the steps I followed in creating the final app
 
+
+
+http://stormy-ice-3304.herokuapp.com/ | git@heroku.com:stormy-ice-3304.git
+
+
 ================================================================================
 Created new app 
 * rails new app0521 --skip-test-unit -d postgresql
