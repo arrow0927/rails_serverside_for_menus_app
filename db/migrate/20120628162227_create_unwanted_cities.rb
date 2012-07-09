@@ -1,5 +1,6 @@
 class CreateUnwantedCities < ActiveRecord::Migration
   def change
+=begin
     create_table :unwanted_cities do |t|
       
      t.string :name
@@ -29,5 +30,6 @@ class CreateUnwantedCities < ActiveRecord::Migration
 
      t.timestamps
     end
+=end
   end
 end

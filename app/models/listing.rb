@@ -33,7 +33,7 @@
 
 class Listing < ActiveRecord::Base
   
-  has_many :images
+
   #NON DATATABLES VERSION uses this===============
   
   #def self.search(search)

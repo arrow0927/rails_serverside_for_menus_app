@@ -142,6 +142,7 @@ class ListingsController < ApplicationController
     respond_to do |format|
       format.html do# index.html.erb
         @listings = Listing.all
+        #@listings = Listing.where(:keep => false)
       end
       format.json { render json: ListingsDatatable.new(view_context) } 
       #format.pdf do 

@@ -1,6 +1,8 @@
 App0521::Application.routes.draw do
  
  
+  resources :s3_files
+
   resources :unwanted_cities
 
   resources :unused_listings

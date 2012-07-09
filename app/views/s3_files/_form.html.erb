@@ -1,0 +1,18 @@
+<%= simple_form_for(@s3_file , :html => { :multipart => true }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+  </div>
+
+
+    <div class="form-inputs">
+      <%=f.label :upload %><br/>
+      <%=f.file_field :upload %>
+    </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

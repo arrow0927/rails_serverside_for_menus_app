@@ -1,4 +1,6 @@
 class AddColumnsToUnwantedListings < ActiveRecord::Migration
+  
+=begin
   def change
     add_column :unwanted_cities, :name, :string
     add_column :unwanted_cities, :telephone, :string
@@ -26,4 +28,5 @@ class AddColumnsToUnwantedListings < ActiveRecord::Migration
     add_column :unwanted_cities, :menu_source, :string
     
   end
+=end
 end

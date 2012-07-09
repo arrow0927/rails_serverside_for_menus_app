@@ -3,60 +3,97 @@
 	<head>
 		<title>App0521</title>
 		<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-  <![endif]-->
-		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<%= stylesheet_link_tag   "application", :media => "all" %>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
-		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<!--<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>-->
-	 
+	<p class="alert"><%= alert %></p>-->
 	<!--<%= debug(params) if Rails.env.development? %>-->
 	<body>
-		 <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#">App0521</a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li><%= link_to "Browse Listings", listings_path %></li>
-            <li><%= link_to "Seperated Duplicate Listings" , unused_listings_path %></li>
-            <li><%= link_to "Non Vancouver Listings" , unwanted_cities_path %></li>
-            <li><%= link_to "Admin Dash Board" , admin_dash_board_index_path %></li>
-            <li><%= link_to "Map" , '/geoView' %></li>
-            <li><%= link_to "Contact Us", '#' %></li>
-            <%if user_signed_in? %>
-				<li><%= current_user.email%></li>
-				<li><%= link_to "Sign Out",  destroy_user_session_path, :method => :delete , :class => 'btn btn-mini brn-danger'%></li>
-            
-            <%end%>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-			
-			<!--<div id= "user nav">
-				<%if user_signed_in? %>
-				Signed In as <b><%= current_user.email%></b>. Not You?
-				<%= link_to "Sign Out",  destroy_user_session_path, :method => :delete , :class => 'btn btn-mini brn-danger'%>
-				
-				<%else%>
-				<%= link_to "Sign in", new_user_session_path , :class => 'btn btn-mini'%>
-				<br/>
-				Contact the admin to obtain a login and password
-				<%end%>
-			</div>-->
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+					<a class="brand" href="#">App0521</a>
+					<div class="nav-collapse">
+						<ul class="nav">
+							<%if user_signed_in? %>
+                              <%if current_user.has_role? :admin%>
+                                    <li>
+                                        <%= link_to "Browse Listings", listings_path %>
+                                    </li>
+
+
+                                <li class="divider-vertical"></li>
+
+                                <li>
+                                    <%= link_to "Admin " , admin_dash_board_index_path %>
+                                </li>
+                                <li class="divider-vertical"></li>
+                                <li>
+                                    <%= link_to "Map" , '/geoView' %>
+                                </li>
+                                <li class="divider-vertical"></li>
+                                  <li>
+                                    <%= link_to "Menus", "#" %>
+                                  </li>
+                                  <li class="divider-vertical"></li>
+                                <li>
+                                    <%= link_to "S3 Files", s3_files_path %>
+                                </li>
+                              <% end  %>
+                                   <li class="divider-vertical"></li>
+                                      <li class="dropdown">
+                                        <a href="#"
+                                        class="dropdown-toggle"
+                                        data-toggle="dropdown">
+                                        <%= current_user.email%>
+                                        <b class="caret"></b>
+                                        </a>
+							
+                                        <ul class="dropdown-menu">
+
+                                            <li><%= link_to "Sign Out",  destroy_user_session_path, :method => :delete , :class => 'btn btn-mini brn-danger'%></li>
+
+                                        </ul>
+
+
+                                    </li>
+
+
+
+                                   <li><%= link_to "Sign Out",  destroy_user_session_path, :method => :delete , :class => 'btn btn-mini brn-danger'%></li>
+									
+							
+							<%else%>
+
+							<%end%>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div id= "user nav">
+		<%if user_signed_in? %>
+		Signed In as <b><%= current_user.email%></b>. Not You?
+		<%= link_to "Sign Out",  destroy_user_session_path, :method => :delete , :class => 'btn btn-mini brn-danger'%>
+
+		<%else%>
+		<%= link_to "Sign in", new_user_session_path , :class => 'btn btn-mini'%>
+		<br/>
+		Contact the admin to obtain a login and password
+		<%end%>
+		</div>-->
 		
-		<%= yield %>
+		
+		
+		 <%= yield %>
+		
+		<script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>‌-->​
 	</body>
 </html>

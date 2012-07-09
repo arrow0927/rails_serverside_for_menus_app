@@ -41,4 +41,9 @@ class User < ActiveRecord::Base
   #in addition the email MUST be unique
   validates_presence_of :name, :email
   validates_uniqueness_of  :email, :case_sensitive => false
+  
+  #Used to connect to s3_files through the join table
+  has_many :user_resource_relationships
+  has_many :s3_files, :through => :user_resource_relationships
+  
 end

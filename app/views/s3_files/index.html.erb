@@ -1,0 +1,41 @@
+<h1>Listing s3_files</h1>
+
+
+<table id="s3_files_index">
+  <tr>
+
+    <th>id</th>
+    <th>File Path</th>
+    <th>File name</th>
+    <th>Owner</th>
+    <th>Created on</th>
+    <th>Updated on</th>
+    <th>last accessed by</th>
+    <th>last accessed time stamp</th>
+    <th>Notes</th>
+  </tr>
+
+<% @s3_files.each do |s3_file| %>
+  <tr>
+
+    <td><%=  s3_file.id %></td>
+    <td><%=  s3_file.upload.url %></td>
+    <td><%=  s3_file.upload_file_name  %></td>
+    <td><%=  s3_file.owner %></td>
+    <td><%=  s3_file.created_at %></td>
+    <td><%=  s3_file.updated_at %></td>
+    <td><%=  s3_file.last_accessed_by_user %></td>
+    <td><%=  s3_file.last_accessed_time_stamp %></td>
+    <td><%=  s3_file.notes %></td>
+    <td><%= link_to 'Show', s3_file %></td>
+
+
+    <td><%= link_to 'Edit', edit_s3_file_path(s3_file) %></td>
+    <td><%= link_to 'Destroy', s3_file, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New S3 file', new_s3_file_path %>

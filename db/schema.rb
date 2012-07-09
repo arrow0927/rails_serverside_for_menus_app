@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120630145651) do
+ActiveRecord::Schema.define(:version => 20120708155913) do
 
   create_table "addresses", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -35,16 +35,6 @@ ActiveRecord::Schema.define(:version => 20120630145651) do
     t.string   "telephone2"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "images", :force => true do |t|
-    t.string   "image_description"
-    t.string   "image_file_path"
-    t.integer  "image_file_size"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
   end
 
   create_table "listings", :force => true do |t|
@@ -102,6 +92,20 @@ ActiveRecord::Schema.define(:version => 20120630145651) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "s3_files", :force => true do |t|
+    t.string   "owner"
+    t.text     "notes"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "last_accessed_by_user"
+    t.datetime "last_accessed_time_stamp"
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.string   "owner_role"
+  end
 
   create_table "unused_listings", :force => true do |t|
     t.string   "name"
@@ -161,6 +165,16 @@ ActiveRecord::Schema.define(:version => 20120630145651) do
     t.string   "menu_source"
   end
 
+  create_table "user_resource_relationships", :force => true do |t|
+    t.integer  "s3_file_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.text     "summary"
+  end
+
+  add_index "user_resource_relationships", ["s3_file_id", "user_id"], :name => "index_user_resource_relationships_on_s3_file_id_and_user_id"
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -186,15 +200,5 @@ ActiveRecord::Schema.define(:version => 20120630145651) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
-
-  create_table "works", :force => true do |t|
-    t.string   "file_name"
-    t.string   "person_name"
-    t.date     "date_assigned"
-    t.date     "date_completed"
-    t.text     "comments"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
 
 end

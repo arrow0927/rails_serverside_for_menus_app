@@ -7,8 +7,8 @@
   <%= f.input :id , :readonly => true %>
   <%= f.input :name %>
   <%= f.input :checked , hint: "Has the data been cleansed and checked?" %>
-  <%= f.input :menu_state,  collection: [:not_collected, :collected, :digitized, :Database] %>
-  <%= f.input :menu_source, collection: [:text, :website, :not_applicable ] %>
+  <%= f.input :menu_state,  collection: [:not_applicable, :not_collected, :to_collect_physical, :menu_missing, :refused_to_give, :collected, :pending, :digitized, :Database] %>
+  <%= f.input :menu_source, collection: [:text, :website, :image, :raw, :clean, :tagged_with_ingredients, :not_applicable ] %>
   
   <%= f.input :keep , hint: "After checking for duplicates decide whether to keep or flag as a duplicate.."%>
   <%= f.input :notes, hint: "Further instructions on what needs to be done" %>

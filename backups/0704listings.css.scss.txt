@@ -1,0 +1,197 @@
+// Place all the styles related to the Listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+tr:hover
+{
+  background:#FCF;
+}
+
+/*used by listings index NON DATATABLES implemntations*/
+table.non_datatables
+{
+  border-collapse: collapse;
+}
+.non_datatables td, .non_datatables th
+{
+  padding: 4px 10px;
+  border: solid 1px #AAA;
+}
+
+/*end styling for Listings index table non datatable version===================*/
+/*used by listings table datatables implementations*/
+.listings
+{
+  table tr td
+  {
+    padding: 5px;
+    vertical-align: top;
+  }
+dt
+{
+  color: #232;
+  font-weight: bold;
+  font-size: larger;
+}
+dd
+{
+  margin: 0;
+}
+/* Used by GeoView and Listings maps*/
+}
+
+
+
+/* This is the right panel that will appear next to the map however it is now messed up*/
+#top_vendors
+{
+  width: 100%;
+  height: 15%;
+  padding: 0px;
+  margin: 0px;
+  background: #808080;
+}
+#left_control_panel
+{
+  width: 100px;
+  height: 72%;
+  background: #808080;
+  margin: 20; 
+  padding: 20px;
+  float: left; 
+}
+#mid_wrapper
+{
+   width: 100%;
+  height: 100%;
+  vertical-align:left; 
+  //padding: 25px;
+  //border-style: solid;
+  //border-width: 1px;
+  margin-left: 0px;
+ margin-right: 0px;
+}
+#map_canvas
+{
+  width: 70%;
+  height: 73%;
+  vertical-align:top; 
+  //padding: 25px;
+  border-style: solid;
+  border-width: 1px;
+  //margin-left: 30px;
+ //margin-right: 30px;
+ //max-width:none;
+ float: left;
+}
+#right_control_panel
+{
+  width: 20%;
+  height: 72%;
+  background: #808080;
+  //margin: 20; 
+  //padding: 20px;
+  float: right; 
+}
+
+/*Unused
+#map_recommend
+{
+  height: 80%;
+  width: 200px;
+  vertical-align: right; 
+  background:#000;
+}
+*/
+
+
+
+
+
+
+
+
+.infoWindow
+{
+  width: 300px;
+  height:200px;
+  -moz-border-radius:20px;
+  -webkit-border-radius: 20px;
+  background: #ffe4c4;
+  color: black;
+  border:2px solid black;
+  
+  #iw-title
+  {
+    color: red;
+  }
+  #iw-img
+  {
+    float:left;
+    padding:2px;
+    border:2px solid;
+    border-color: #deb887;
+    -moz-border-radius:20px;
+    -webkit-border-radius: 20px;
+  }
+  .iw-titleBox
+  {
+    
+    vertical-align:top;
+    float:right;
+    width:50%;
+    height: 60%;
+    padding: 5px;
+    //border:2px solid black;
+    -moz-border-radius:20px;
+    -webkit-border-radius: 20px;
+    background: #deb887;
+  }
+  
+  .iw-buttonBox
+  {
+    vertical-align:-25px;
+    //float:bottom;
+    width:50%;
+    height: 60%;
+    //border:2px solid black;
+    -moz-border-radius:20px;
+    -webkit-border-radius: 20px;
+    //background: #deb887;
+  }
+  .iw-button
+  {
+    border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5.5px 11px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+  }
+  .iw-button:hover {
+   border-top-color: #28597a;
+   background: #c0c0c0;
+   color: #000;
+   }
+.iw-button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+  
+}
+
+//==============================================================================

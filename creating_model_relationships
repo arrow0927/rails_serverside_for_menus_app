@@ -1,0 +1,8 @@
+In order to link 2 models  wiht a has_and_belongs_to_many relationship through anoither model
+
+take the following steps
+
+1)Create a joinTable : user_resource_relationships
+2) Put all the attributes of that relationship as fields in theat join table
+3) There will be a primary key and foreign keys to the other models
+4)
