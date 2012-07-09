@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31789c05-6c94-4455-b2ef-b1ed4be928f7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/listings.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/listings.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/listings.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/listings.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/listings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/listings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/unused_listings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/unused_listings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ability.rb" afterPath="$PROJECT_DIR$/app/models/ability.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/listing.rb" afterPath="$PROJECT_DIR$/app/models/listing.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/listings/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/listings/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/listings/geoView.html.erb" afterPath="$PROJECT_DIR$/app/views/listings/geoView.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20120628162227_create_unwanted_cities.rb" afterPath="$PROJECT_DIR$/db/migrate/20120628162227_create_unwanted_cities.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20120630145651_add_columns_to_unwanted_listings.rb" afterPath="$PROJECT_DIR$/db/migrate/20120630145651_add_columns_to_unwanted_listings.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/s3_files_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/s3_files_controller.rb" />
     </list>
     <ignored path="app0521.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,10 +60,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="59" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.80887794">
+            <state line="41" column="59" selection-start="1805" selection-end="1805" vertical-scroll-proportion="-26.24">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="s3_file.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/s3_file.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="48" selection-start="1419" selection-end="1419" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="s3_files_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/s3_files_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="4" selection-start="729" selection-end="729" vertical-scroll-proportion="0.19347037">
               <folding />
             </state>
           </provider>
@@ -108,11 +111,11 @@
         <option value="$PROJECT_DIR$/app/views/s3_files/index.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20120708155913_add_col_to_s3_file.rb" />
         <option value="$PROJECT_DIR$/app/models/s3_file.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/s3_files_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/listings_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/unused_listings_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/listings/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/s3_files_controller.rb" />
       </list>
     </option>
   </component>
@@ -584,7 +587,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-280" width="1652" height="1063" extended-state="6" />
+    <frame x="1280" y="-280" width="1652" height="1063" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -694,20 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/s3_file.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="48" selection-start="1419" selection-end="1419" vertical-scroll-proportion="0.7435567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/s3_files_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="42" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="33" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.0">
@@ -766,7 +755,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="59" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.80887794">
+        <state line="41" column="59" selection-start="1805" selection-end="1805" vertical-scroll-proportion="-26.24">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/s3_file.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="48" selection-start="1419" selection-end="1419" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/s3_files_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="4" selection-start="729" selection-end="729" vertical-scroll-proportion="0.19347037">
           <folding />
         </state>
       </provider>

@@ -32,7 +32,7 @@ class S3FilesController < ApplicationController
   def new
     @s3_file = S3File.new
     @s3_file.owner = current_user.email
-    @s3_file.owner_role= current_user.role
+   # @s3_file.owner_role= current_user.role
 
     respond_to do |format|
       format.html # new.html.erb
