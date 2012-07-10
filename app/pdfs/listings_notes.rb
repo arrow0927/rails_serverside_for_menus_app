@@ -28,9 +28,9 @@ class ListingsNotes < Prawn::Document
   #Change the parameters here if you want to change
   #report type
   def line_item_rows
-   [["name", "address","menu_state", "menu_source"] ] +
+   [["name", "address","menu_state", "menu_source", "notes"] ] +
    @noteslistings.each.map do |nlisting|
-     [nlisting.name, nlisting.address, nlisting.menu_state, nlisting.menu_source ]
+     [nlisting.name, nlisting.address, nlisting.menu_state, nlisting.menu_source, nlisting.notes ]
    end
 
   end

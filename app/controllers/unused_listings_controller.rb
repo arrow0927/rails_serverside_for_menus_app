@@ -49,7 +49,7 @@ class UnusedListingsController < ApplicationController
   def index
     #self.create_unused_listings
     #Listing.destroy_all(:keep =>false)
-    #@listings = Listing.all
+    @listings = Listing.all
     @unused_listings = UnusedListing.order("name ASC")
 
     respond_to do |format|
