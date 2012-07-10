@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120708155913) do
+ActiveRecord::Schema.define(:version => 20120709015425) do
 
   create_table "addresses", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -67,19 +67,22 @@ ActiveRecord::Schema.define(:version => 20120708155913) do
   end
 
   create_table "menu_items", :force => true do |t|
-    t.string   "name"
     t.string   "listing_name"
-    t.string   "description"
+    t.string   "category_1"
+    t.string   "category_2"
+    t.string   "category_3"
+    t.string   "menu_item_name"
     t.string   "price"
-    t.string   "category1"
-    t.string   "category2"
-    t.string   "category3"
-    t.string   "addOn1"
-    t.string   "addOn1price"
-    t.string   "addOn2"
-    t.string   "addOn2price"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "description"
+    t.string   "add_on_1"
+    t.string   "price_add_on_1"
+    t.string   "add_on_2"
+    t.string   "price_add_on_2"
+    t.text     "notes"
+    t.string   "typist"
+    t.string   "source"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "roles", :force => true do |t|
@@ -168,9 +171,11 @@ ActiveRecord::Schema.define(:version => 20120708155913) do
   create_table "user_resource_relationships", :force => true do |t|
     t.integer  "s3_file_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.text     "summary"
+    t.string   "last_accessed_by_user"
+    t.datetime "last_accessed_time_stamp"
   end
 
   add_index "user_resource_relationships", ["s3_file_id", "user_id"], :name => "index_user_resource_relationships_on_s3_file_id_and_user_id"

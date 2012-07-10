@@ -1,0 +1,48 @@
+<h1>menu_items</h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>item_name</th>
+    <th>belongs_to</th>
+    <th>cat1</th>
+    <th>cat2</th>
+    <th>cat3</th>
+    <th>price</th>
+    <th>description</th>
+    <th>add_on_1</th>
+    <th>add_on_1_price</th>
+    <th>add_on_2</th>
+    <th>add_on_2_price</th>
+    <th>typist</th>
+    <th>source</th>
+    <th>notes</th>
+
+  </tr>
+
+<% @menu_items.each do |menu_item| %>
+  <tr>
+    <td><%= menu_item.id %></td>
+    <td><%= menu_item.menu_item_name %></td>
+    <td><%= menu_item.listing_name %></td>
+    <td><%= menu_item.category_1 %></td>
+    <td><%= menu_item.category_2 %></td>
+    <td><%= menu_item.category_3 %></td>
+    <td><%= menu_item.price %></td>
+    <td><%= menu_item.description %></td>
+    <td><%= menu_item.add_on_1 %></td>
+    <td><%= menu_item.price_add_on_1 %></td>
+    <td><%= menu_item.add_on_2 %></td>
+    <td><%= menu_item.price_add_on_2 %></td>
+    <td><%= menu_item.typist %></td>
+    <td><%= menu_item.notes %></td>
+    <td><%= link_to 'Show', menu_item %></td>
+    <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>
+    <td><%= link_to 'Destroy', menu_item, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Menu item', new_menu_item_path %>

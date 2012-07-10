@@ -1,6 +1,8 @@
 App0521::Application.routes.draw do
  
  
+  resources :menu_items
+
   resources :s3_files
 
   resources :unwanted_cities

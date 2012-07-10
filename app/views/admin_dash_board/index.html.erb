@@ -3,13 +3,9 @@
 	
 
 	<ul>
-		<li><%=link_to "Listings table",  listings_path %></li>
-		<li><%=link_to "Menu Items table",  '#' %></li>
-		<li><%=link_to "Images table",  '#' %></li>
-		<li><%=link_to "Typists table",  '#' %></li>
-		<li><%=link_to "Users table",  users_path %></li>
-		
-		
+		<li><%=link_to "Manage Users ",  users_path %></li>
+        <li><%= link_to "Manage Menus", menu_items_path %> </li>
+        <li><%= link_to "File management Upload, View, edit,delete files on \"Attic-Cloud\"", s3_files_path %> </li>
 		
 	</ul>
 

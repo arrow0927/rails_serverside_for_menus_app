@@ -24,27 +24,24 @@
 							<%if user_signed_in? %>
                               <%if current_user.has_role? :admin%>
                                     <li>
-                                        <%= link_to "Browse Listings", listings_path %>
+                                        <%= link_to "Listings Table", listings_path %>
                                     </li>
+                                  <li class="divider-vertical"></li>
+                                  <li>
+                                    <%= link_to "Map" , '/geoView' %>
+                                  </li>
+                                  <li class="divider-vertical"></li>
 
-
+                                  <li>
+                                    <%= link_to "Vendors " ,"#" %>
+                                  </li>
                                 <li class="divider-vertical"></li>
 
                                 <li>
                                     <%= link_to "Admin " , admin_dash_board_index_path %>
                                 </li>
-                                <li class="divider-vertical"></li>
-                                <li>
-                                    <%= link_to "Map" , '/geoView' %>
-                                </li>
-                                <li class="divider-vertical"></li>
-                                  <li>
-                                    <%= link_to "Menus", "#" %>
-                                  </li>
-                                  <li class="divider-vertical"></li>
-                                <li>
-                                    <%= link_to "S3 Files", s3_files_path %>
-                                </li>
+
+
                               <% end  %>
                                    <li class="divider-vertical"></li>
                                       <li class="dropdown">

@@ -235,8 +235,10 @@ class ListingsController < ApplicationController
   
   def show_notes
     #@listings = Listing.where("listings.notes IS NOT NULL").order("listings.name ASC")
+    #@listings = Listing.where("listings.menu_state = 'collected' ").order("listings.name ASC")
+    @listings = Listing.order("listings.menu_state").order("listings.menu_source")
     #@listings = Listing.all
-    @listings = Listing.order("listings.name ASC")
+    #@listings = Listing.order("listings.name ASC")
     respond_to do |format|
         format.pdf do
         #pdf = Prawn::Document.new
