@@ -235,16 +235,19 @@ class ListingsController < ApplicationController
   
   def show_notes
     #@listings = Listing.where("listings.notes IS NOT NULL").order("listings.name ASC")
-    @listings = Listing.where("listings.menu_state = 'digitized' ").order("listings.name ASC")
+    #@listings = Listing.where("listings.menu_state = 'digitized' ").order("listings.name ASC")
     #@listings = Listing.order("listings.menu_state").order("listings.menu_source")
     #@listings = Listing.all
     #@listings = Listing.order("listings.name ASC")
     #@listings = Listing.where('menu_state <> ?', "not_a_restaurant").where('menu_state <> ?',"collected").where('menu_state <> ?',"digitized").where('menu_state <> ?',"pending")
+
+
+    @listings = Listing.order('listings.menu_state')
     respond_to do |format|
         format.pdf do
         #pdf = Prawn::Document.new
         pdf = ListingsNotes.new(@listings)
-       
+
         send_data pdf.render, filename: "listings_notes.pdf",
                               type: "application/pdf",
                               disposition: "inline"
