@@ -1,17 +1,15 @@
 task :set_menu_state => :environment do
-  desc "This is a task that will take the values of 3 check boxes: 
-  Menu Collected, Menu Digitized, Menu in Database and set the value of Menu State"
-  @listings = Listing.all
+
+  desc "This will set the menu_state attribute of a listing"
+  @listings = Listing.where("listings.menu_state = 'pending'")
   
   @listings.each do |listing|
-   if listing.menu_collected
-    listing.menu_state = "collected"
-    puts "Listing: #{listing.name} menu_state changed to collected"
-   else
-    listing.menu_state = "not_collected"
-    puts "Listing: #{listing.name} menu_state changed to not_collected"
+    puts "#{listing.name}, #{listing.menu_state} changed to"
+    listing.menu_state = :sent_to_India
+    puts "#{listing.name}, #{listing.menu_state} "
+   # listing.save
    end
-   listing.save
-  end
+
+
   
 end
