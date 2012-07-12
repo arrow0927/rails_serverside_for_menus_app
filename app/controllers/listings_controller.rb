@@ -242,7 +242,7 @@ class ListingsController < ApplicationController
     #@listings = Listing.where('menu_state <> ?', "not_a_restaurant").where('menu_state <> ?',"collected").where('menu_state <> ?',"digitized").where('menu_state <> ?',"pending")
 
 
-    @listings = Listing.order('listings.menu_state')
+    @listings = Listing.order('listings.menu_state ASC').order("listings.name ASC")
     respond_to do |format|
         format.pdf do
         #pdf = Prawn::Document.new

@@ -29,9 +29,9 @@ end
   #Change the parameters here if you want to change
   #report type
   def line_item_rows
-   [["name", "address","menu_state", "menu_source", "notes"] ] +
+   [["name", "address","menu_state", "menu_source"] ] +
    @noteslistings.each.map do |nlisting|
-     [nlisting.name, nlisting.address, nlisting.menu_state, nlisting.menu_source, nlisting.notes ]
+     [nlisting.name, nlisting.address, nlisting.menu_state, nlisting.menu_source]
    end
 
   end

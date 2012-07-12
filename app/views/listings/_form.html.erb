@@ -7,7 +7,7 @@
   <%= f.input :id , :readonly => true %>
   <%= f.input :name %>
   <%= f.input :checked , hint: "Has the data been cleansed and checked?" %>
-  <%= f.input :menu_state,  collection: [:physical_menu_collected, :url_collected, :sent_to_India, :converted_to_Excel, :cleansed, :tagged, :inserted_in_DB, :not_yet_collected, :not_a_restaurant, :refused_to_give, :outside_downtown, :collect_from_location] %>
+  <%= f.input :menu_state,  collection: [:sent_to_India, :converted_to_Excel, :cleansed, :tagged, :inserted_in_DB, :not_collected, :not_a_restaurant, :refused_to_give, :outside_downtown, :collect_from_location] %>
   <%= f.input :menu_source, collection: [:text, :website, :raw, :not_applicable ] %>
   
   <%= f.input :keep , hint: "After checking for duplicates decide whether to keep or flag as a duplicate.."%>
