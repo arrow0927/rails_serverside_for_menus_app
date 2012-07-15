@@ -13,5 +13,18 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-#Add this file which relates to Amazon Webservices per the stackoverflow answer
+
+#Add files that you wish to NOT be uploaded to github or heroku
+
 s3_credentials.yml
+*.csv
+*.swp
+*.dat
+*~
+.project
+.DS_Store
+.idea
+.xls
+.xlsx
+.doc
+.txt
