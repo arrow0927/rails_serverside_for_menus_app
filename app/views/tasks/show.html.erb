@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Task id:</b>
+  <%= @task.id %>
+</p>
+<p>
+  <b>Task name:</b>
+  <%= @task.task_name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @task.description %>
+</p>
+
+<p>
+  <b>Last Run at:</b>
+  <%= @task.last_run_at_time %>
+</p>
+
+<p>
+  <b>Last Run by:</b>
+  <%= @task.last_run_by_user %>
+</p>
+
+<p>
+  <b>Output from last run:</b>
+  <%= @task.output_from_last_run %>
+</p>
+
+
+
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

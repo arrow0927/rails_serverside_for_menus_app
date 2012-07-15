@@ -1,6 +1,8 @@
 App0521::Application.routes.draw do
  
  
+  resources :tasks
+
   resources :menu_items
 
   resources :s3_files
@@ -57,7 +59,8 @@ App0521::Application.routes.draw do
   #For map view
   match "/geoView" => "listings#geoView", :as => :geoView
   
- 
+  #For Admin Tasks run method
+  match "tasks/run/:id" => "tasks#run", :as => :run_tasks
   
   
    #added by Ash- admin dashboard does not need to be added, deleted or edited

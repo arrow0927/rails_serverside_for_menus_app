@@ -1,4 +1,7 @@
 class MenuItemsController < ApplicationController
+  before_filter :authenticate_user!
+
+
   # GET /menu_items
   # GET /menu_items.json
   def index

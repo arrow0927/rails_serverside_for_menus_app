@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709015425) do
+ActiveRecord::Schema.define(:version => 20120714220841) do
 
   create_table "addresses", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -35,6 +35,32 @@ ActiveRecord::Schema.define(:version => 20120709015425) do
     t.string   "telephone2"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "images", :force => true do |t|
+    t.string   "image_description"
+    t.string   "image_file_path"
+    t.integer  "image_file_size"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "listings", :force => true do |t|
@@ -67,22 +93,19 @@ ActiveRecord::Schema.define(:version => 20120709015425) do
   end
 
   create_table "menu_items", :force => true do |t|
+    t.string   "name"
     t.string   "listing_name"
-    t.string   "category_1"
-    t.string   "category_2"
-    t.string   "category_3"
-    t.string   "menu_item_name"
-    t.string   "price"
     t.string   "description"
-    t.string   "add_on_1"
-    t.string   "price_add_on_1"
-    t.string   "add_on_2"
-    t.string   "price_add_on_2"
-    t.text     "notes"
-    t.string   "typist"
-    t.string   "source"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "price"
+    t.string   "category1"
+    t.string   "category2"
+    t.string   "category3"
+    t.string   "addOn1"
+    t.string   "addOn1price"
+    t.string   "addOn2"
+    t.string   "addOn2price"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "roles", :force => true do |t|
@@ -108,6 +131,16 @@ ActiveRecord::Schema.define(:version => 20120709015425) do
     t.integer  "upload_file_size"
     t.datetime "upload_updated_at"
     t.string   "owner_role"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "last_run_at_time"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.text     "description"
+    t.string   "task_name"
+    t.string   "last_run_by_user"
+    t.text     "output_from_last_run"
   end
 
   create_table "unused_listings", :force => true do |t|
@@ -171,11 +204,9 @@ ActiveRecord::Schema.define(:version => 20120709015425) do
   create_table "user_resource_relationships", :force => true do |t|
     t.integer  "s3_file_id"
     t.integer  "user_id"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.text     "summary"
-    t.string   "last_accessed_by_user"
-    t.datetime "last_accessed_time_stamp"
   end
 
   add_index "user_resource_relationships", ["s3_file_id", "user_id"], :name => "index_user_resource_relationships_on_s3_file_id_and_user_id"
@@ -205,5 +236,15 @@ ActiveRecord::Schema.define(:version => 20120709015425) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "works", :force => true do |t|
+    t.string   "file_name"
+    t.string   "person_name"
+    t.date     "date_assigned"
+    t.date     "date_completed"
+    t.text     "comments"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
 end
