@@ -2,50 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31789c05-6c94-4455-b2ef-b1ed4be928f7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AWS_DropBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app0521_instructions.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backups/0704geoView.html.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backups/0704listings.css.scss.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backups/geoView.html.erb.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/AWS_DropBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/convert.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/creating_model_relationships" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/csv_tester.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/overseasworkers.sqlite" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0609.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0612.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0613.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0616.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0622.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0625.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0630.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0701.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0701Test.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0708.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0710.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0710_5pm.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0710_6pm.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0710_8pm.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest071212noon.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest0712930am.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/latest711.dump" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/listings_notes_back_up.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011742.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011744.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011745.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011748.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011756.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011800.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011807.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011813.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011821.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011826.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011830.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011835.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/push_201207011909.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/yp.csv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/app0521.iml" afterPath="$PROJECT_DIR$/.idea/app0521.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -126,7 +82,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="582" selection-end="582" vertical-scroll-proportion="0.516129">
+            <state line="34" column="9" selection-start="638" selection-end="638" vertical-scroll-proportion="0.5849462">
               <folding />
             </state>
           </provider>
@@ -741,7 +697,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="582" selection-end="582" vertical-scroll-proportion="0.516129">
+        <state line="34" column="9" selection-start="638" selection-end="638" vertical-scroll-proportion="0.5849462">
           <folding />
         </state>
       </provider>
