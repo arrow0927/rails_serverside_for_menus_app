@@ -24,24 +24,25 @@ class Task < ActiveRecord::Base
     case self.task_name
 
       when "menu_state_count"
-        #self.output_from_last_run = "menu_state_count ran at #{Time.now} by #{@usr.email}"
+        self.description = "menu_state_count ran at #{Time.now} by #{@usr.email}"
         self.output_from_last_run = menu_state_count
       when "read_csv_net_http"
-        #self.output_from_last_run = "read_csv_net_http ran at #{Time.now} by #{@usr.email}"
+        self.description = "read_csv_net_http ran at #{Time.now} by #{@usr.email}"
         self.output_from_last_run = read_csv_net_http
       when "read_csv_open_uri"
-        #self.output_from_last_run = "read_csv_open_uri ran at #{Time.now} by #{@usr.email}"
+        self.description = "read_csv_open_uri ran at #{Time.now} by #{@usr.email}"
         self.output_from_last_run = read_csv_open_uri
       when "copy_dupes_from_listings"
-        #self.output_from_last_run = "copy_dupes_from_listings ran at #{Time.now} by #{@usr.email}"
+        self.description = "copy_dupes_from_listings ran at #{Time.now} by #{@usr.email}"
         self.output_from_last_run = copy_dupes_from_listings
       when "remove_dupes_from_listings"
-        #self.output_from_last_run = "remove_dupes_from_listings ran at #{Time.now} by #{@usr.email}"
+        self.description = "remove_dupes_from_listings ran at #{Time.now} by #{@usr.email}"
         self.output_from_last_run = remove_dupes_from_listings
       when "set_menu_state"
-        #self.output_from_last_run = "set_menu_state ran at #{Time.now} by #{@usr.email}"
+        self.description = "set_menu_state ran at #{Time.now} by #{@usr.email}"
         self.output_from_last_run = set_menu_state
       else
+        self.description = "<ERROR> ran at #{Time.now} User = #{@usr.email}"
         self.output_from_last_run = "<ERROR>#{Time.now} User = #{@usr.email}"
 
     end

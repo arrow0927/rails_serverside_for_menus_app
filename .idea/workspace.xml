@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31789c05-6c94-4455-b2ef-b1ed4be928f7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/task.rb" afterPath="$PROJECT_DIR$/app/models/task.rb" />
     </list>
     <ignored path="app0521.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,25 +96,16 @@
           <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="86" selection-start="589" selection-end="589" vertical-scroll-proportion="-13.44">
+                <state line="28" column="64" selection-start="666" selection-end="666" vertical-scroll-proportion="-17.92">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="35" column="6" selection-start="645" selection-end="645" vertical-scroll-proportion="0.60021436">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="task.rb" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="task.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/models/task.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="53" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.0">
+                <state line="44" column="43" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.7545552">
                   <folding />
                 </state>
               </provider>
@@ -146,12 +136,12 @@
         <option value="$PROJECT_DIR$/app/views/admin_dash_board/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/tasks_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/tasks/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/task.rb" />
         <option value="$PROJECT_DIR$/app/views/tasks/run.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/tasks_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/tasks/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/tasks/index.html.erb" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/models/task.rb" />
       </list>
     </option>
   </component>
@@ -731,7 +721,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-280" width="1920" height="1080" extended-state="7" />
+    <frame x="1280" y="-280" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -872,9 +862,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/task.rb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/tasks_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="53" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.0">
+        <state line="4" column="96" selection-start="216" selection-end="216" vertical-scroll-proportion="0.069565214">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="6" selection-start="645" selection-end="645" vertical-scroll-proportion="0.60021436">
           <folding />
         </state>
       </provider>
@@ -882,13 +879,6 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/tasks_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="99" column="0" selection-start="2085" selection-end="2085" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/tasks_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="96" selection-start="216" selection-end="216" vertical-scroll-proportion="0.069565214">
           <folding />
         </state>
       </provider>
@@ -909,14 +899,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="86" selection-start="589" selection-end="589" vertical-scroll-proportion="-13.44">
+        <state line="28" column="64" selection-start="666" selection-end="666" vertical-scroll-proportion="-17.92">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app/models/task.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="6" selection-start="645" selection-end="645" vertical-scroll-proportion="0.60021436">
+        <state line="44" column="43" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.7545552">
           <folding />
         </state>
       </provider>
