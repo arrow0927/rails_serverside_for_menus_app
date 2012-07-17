@@ -33,3 +33,4 @@ s3_credentials.yml
 *.csv.swn
 *.csv.swo
 *.csv.swp
+*.dump

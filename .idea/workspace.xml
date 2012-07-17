@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31789c05-6c94-4455-b2ef-b1ed4be928f7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/latest0715_7pm.dump" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/tasks/run.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/tasks_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/tasks_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/menu_item.rb" afterPath="$PROJECT_DIR$/app/models/menu_item.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/task.rb" afterPath="$PROJECT_DIR$/app/models/task.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/menu_items/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/menu_items/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/menu_items/show.html.erb" afterPath="$PROJECT_DIR$/app/views/menu_items/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/tasks/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/index.html.erb" afterPath="$PROJECT_DIR$/app/views/tasks/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/show.html.erb" afterPath="$PROJECT_DIR$/app/views/tasks/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/menu_state_count.rake" afterPath="$PROJECT_DIR$/lib/tasks/menu_state_count.rake" />
     </list>
     <ignored path="app0521.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,10 +94,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="86" selection-start="589" selection-end="589" vertical-scroll-proportion="0.37004405">
+                <state line="21" column="86" selection-start="589" selection-end="589" vertical-scroll-proportion="-13.44">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="35" column="6" selection-start="645" selection-end="645" vertical-scroll-proportion="0.60021436">
                   <folding />
                 </state>
               </provider>
@@ -141,7 +138,6 @@
       <list>
         <option value="$PROJECT_DIR$/db/migrate/20120714184416_manage_columns_in_tasks.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lib/tasks/menu_state_count.rake" />
         <option value="$PROJECT_DIR$/app/models/menu_item.rb" />
         <option value="$PROJECT_DIR$/app/views/menu_items/show.html.erb" />
@@ -155,6 +151,7 @@
         <option value="$PROJECT_DIR$/app/helpers/tasks_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/tasks/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/tasks/index.html.erb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -734,7 +731,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-280" width="1920" height="1080" extended-state="6" />
+    <frame x="1280" y="-280" width="1920" height="1080" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -812,13 +809,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/menu_items/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="822" selection-end="822" vertical-scroll-proportion="0.36167923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/menu_item.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="8" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
@@ -919,7 +909,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="86" selection-start="589" selection-end="589" vertical-scroll-proportion="0.37004405">
+        <state line="21" column="86" selection-start="589" selection-end="589" vertical-scroll-proportion="-13.44">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="6" selection-start="645" selection-end="645" vertical-scroll-proportion="0.60021436">
           <folding />
         </state>
       </provider>
