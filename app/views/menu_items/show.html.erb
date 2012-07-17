@@ -1,5 +1,24 @@
 <p id="notice"><%= notice %></p>
-
-
 <%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
 <%= link_to 'Back', menu_items_path %>
+
+<div class="well">
+  <p><b>[<%= @menu_item.id %> ] <%= @menu_item.name %></b></p>
+  <p><b>  %>"Belongs to" <%= @menu_item.listing_name %>      </b>  %> </p>
+
+</div>
+
+<div class="well">
+  <p><b>Description</b><%= @menu_item.description %></p>
+  <p><b>Menu Price:</b><%= @menu_item.price %></p>
+  <p><b>Menu category1:</b><%= @menu_item.category1 %></p>
+  <p><b>Menu category2:</b><%= @menu_item.category2 %></p>
+  <p><b>Menu category3:</b><%= @menu_item.category3 %></p>
+  <p><b>Add On 1:</b><%= @menu_item.addOn1 %></p>
+  <p><b>Add On 1 Price:</b><%= @menu_item.addOn1price %></p>
+  <p><b>Add On 2:</b><%= @menu_item.addOn2 %></p>
+  <p><b>Add On 2 Price</b><%= @menu_item.addOn2price %></p>
+
+
+</div>
+

@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :task_name %>
+    <%= f.input :task_name, collection: [:menu_state_count, :set_menu_state, :copy_dupes_from_listings, :remove_dupes_from_listings, :read_csv_net_http, :read_csv_open_uri] %>
   </div>
 
     <div class="form-inputs">

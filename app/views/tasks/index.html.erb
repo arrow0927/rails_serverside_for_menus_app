@@ -6,7 +6,7 @@
     <th>Description</th>
     <th>Last Run at</th>
     <th>Last Run by</th>
-    <th>Output from Last run</th>
+
   </tr>
 
 <% @tasks.each do |task| %>
@@ -15,11 +15,11 @@
     <td><%=task.description %></td>
     <td><%=task.last_run_at_time %></td>
     <td><%=task.last_run_by_user %></td>
-    <td><%=task.output_from_last_run %></td>
+
     <td><%= link_to 'Run Task now', run_tasks_path(task)  %></td>
-    <td><%= link_to 'Show', task %></td>
-   <!--<td><%= link_to 'Edit', edit_task_path(task) %></td>-->
-    <!--<td><%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete %></td>-->
+    <td><%= link_to 'Last Times output', task %></td>
+   <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -1,10 +1,30 @@
-<%= simple_form_for(@menu_item) do |f| %>
+<%if user_signed_in? %></br/>
+
+<%= simple_form_for(@menu_item, :html => {:multipart => true, :class=> 'form-horizontal'} ) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-  </div>
+        <%= f.button :submit %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+        <%= f.input :id %> <!--, :readonly => true-->
+        <%= f.input :name%>  <!--, hint: "Menu Name"%>-->
+        <%= f.input :listing_name %><!--, :readonly => true %>-->
+        <%= f.input :description   %>
+        <%= f.input :price, hint: "Do not include $ signs only numbers"  %>
+
+        <%= f.input :category1 , hint: "This is the top most category " %>
+        <%= f.input :category2, hint: "This category nests under Category I" %>
+        <%= f.input :category3 %>
+        <%= f.input :addOn1, hint: " sides/ additional items that can be tacked on to this dish" %>
+        <%= f.input :addOn1price, hint: "Do not include $ signs only numbers" %>
+        <%= f.input :addOn2 %>
+        <%= f.input :addOn2price, hint: "Do not include $ signs only numbers" %>
+
+        <%= f.error :base %>
 <% end %>
+
+
+<%else%>
+
+    <%=link_to "Sign in", new_user_session_path , :class => 'btn btn-mini btn-danger'%><br/>
+    Contact the admin to obtain a login and password
+<%end%>

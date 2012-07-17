@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
 
   before_filter :authenticate_user!
+
+
   # GET /tasks
   # GET /tasks.json
   def index
@@ -83,12 +85,22 @@ class TasksController < ApplicationController
     end
   end
 
+
+
+
   def run
     @task = Task.find(params[:id])
-    @task.run_task
-    flash[:notice] = "Running Task #{@task.task_name}in the background, please click show to see results after a few seconds"
-    redirect_to tasks_url
+    @curr_user = User.find(current_user.id)
+    @task.run_task(@curr_user)
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
   end
+
+
 
 
 end
