@@ -16,6 +16,7 @@
 #  addOn2price  :string(255)
 #  created_at   :datetime        not null
 #  updated_at   :datetime        not null
+#  typist       :string(255)
 #
 
 class MenuItem < ActiveRecord::Base
