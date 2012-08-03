@@ -18,7 +18,7 @@ class Task < ActiveRecord::Base
   #include ActionView::Helpers
   #ActionController::Base.helpers.sanitize(str)
 
-  #All the tasks invoked in the following method are defined in the TasksHelper module
+  #All the tasks invoked in the following method are defined in the helpers/tasks_helper module
   def run_task(user_id)
     @usr = User.find(user_id)
     case self.task_name

@@ -27,6 +27,8 @@ module TasksHelper
     @buffer << "Outside Downtown = #{@outside_downtown} \n"
     @collect_from_location = Listing.where("listings.menu_state = 'collect_from_location' " ).count
     @buffer << "collect_from_location = #{@collect_from_location} \n"
+    @collect_from_outside_DT = Listing.where("listings.menu_state = 'collect_from_outside_DT' " ).count
+    @buffer << "collect_from_outside_DT = #{@collect_from_outside_DT} \n"
     @invalid_with_space = Listing.where("listings.menu_state = '' " ).count
     @buffer << "Invalid with \"\" = #{@invalid_with_space} \n"
     @invalid_with_spaces = Listing.where("listings.menu_state = ' ' " ).count
